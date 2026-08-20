@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="100%" style="stop-color:#FF6B9D"/>
+    </linearGradient>
+    <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35"/>
+      <stop offset="50%" style="stop-color:#FF6B9D"/>
+      <stop offset="100%" style="stop-color:#7B2FF7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon: stylized nest with egg -->
+  <g transform="translate(4, 4)">
+    <!-- Nest bowl -->
+    <path d="M8 38 Q8 50 26 50 Q44 50 44 38 L42 38 Q42 48 26 48 Q10 48 10 38 Z" fill="url(#iconGrad)" opacity="0.9"/>
+    <path d="M6 36 C6 36 10 34 16 36 C22 38 28 38 34 36 C40 34 44 36 44 36 L44 38 Q44 50 26 50 Q8 50 8 38 Z" fill="url(#logoGrad)"/>
+
+    <!-- Nest weave lines -->
+    <path d="M10 40 Q18 42 26 40 Q34 38 42 40" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+    <path d="M9 43 Q18 45 26 43 Q34 41 43 43" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.25"/>
+
+    <!-- Egg -->
+    <ellipse cx="26" cy="30" rx="10" ry="12" fill="#FFC312" opacity="0.95"/>
+    <ellipse cx="26" cy="30" rx="10" ry="12" fill="none" stroke="#FFB800" stroke-width="1"/>
+    <!-- Egg highlight -->
+    <ellipse cx="23" cy="27" rx="3" ry="4.5" fill="#fff" opacity="0.35" transform="rotate(-15 23 27)"/>
+
+    <!-- Small decorative stars -->
+    <circle cx="14" cy="26" r="1.5" fill="#FFC312" opacity="0.6"/>
+    <circle cx="38" cy="24" r="1.2" fill="#FF6B9D" opacity="0.5"/>
+    <circle cx="30" cy="18" r="1" fill="#7B2FF7" opacity="0.4"/>
+  </g>
+
+  <!-- Text: Kid -->
+  <text x="60" y="44" font-family="'Nunito', 'Baloo 2', Arial, sans-serif" font-weight="800" font-size="38" fill="url(#logoGrad)">Kid</text>
+
+  <!-- Text: Nest -->
+  <text x="133" y="44" font-family="'Nunito', 'Baloo 2', Arial, sans-serif" font-weight="800" font-size="38" fill="#1A1D29">Nest</text>
+</svg>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="KidNest service details, pricing, inclusions, FAQs and booking information." name="description"/>
+<title>Service Details | KidNest</title><link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Nunito:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/><link href="css/style.css" rel="stylesheet"/>
+<style>
+.details-page{overflow-x:hidden;background:var(--bg-primary)}
+.details-hero{padding:155px 0 85px;background:var(--bg-primary)}
+.details-breadcrumb{display:flex;gap:8px;align-items:center;color:var(--text-secondary);font-size:.85rem;margin-bottom:24px}.details-breadcrumb a{color:var(--secondary);text-decoration:none;font-weight:800}
+.details-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:55px;align-items:center}.details-hero h1{font:800 clamp(2.8rem,5vw,4.8rem)/1.04 var(--font-heading);color:var(--text-primary);margin:14px 0}.details-hero p{color:var(--text-secondary);font-size:1.05rem;line-height:1.8;max-width:680px}.details-tag{display:inline-flex;padding:8px 14px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-weight:800;font-size:.8rem}.details-price{font:800 1.8rem var(--font-heading);color:var(--text-primary);margin:22px 0}.details-price small{font:500 .85rem var(--font-body);color:var(--text-secondary)}.details-hero-actions{display:flex;gap:12px;flex-wrap:wrap}.details-hero-image{height:470px;border-radius:32px;overflow:hidden;box-shadow:var(--shadow-xl);border:7px solid var(--bg-card)}.details-hero-image img{width:100%;height:100%;object-fit:cover}
+.details-section{padding:100px 0}.details-section.alt{background:var(--bg-secondary)}.details-heading{text-align:center;max-width:720px;margin:0 auto 45px}.details-heading h2{font:800 clamp(2.2rem,4vw,3.4rem)/1.08 var(--font-heading);color:var(--text-primary);margin:14px 0}.details-heading p{color:var(--text-secondary);line-height:1.75}
+.details-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.details-feature{padding:28px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:22px;height:100%}.details-feature i{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--secondary-light);color:var(--secondary);margin-bottom:18px}.details-feature h3{font:800 1.2rem var(--font-heading);color:var(--text-primary)}.details-feature p{font-size:.88rem;color:var(--text-secondary);line-height:1.7;margin:0}
+.details-content-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:start}.details-copy h3{font:800 1.7rem var(--font-heading);color:var(--text-primary);margin-bottom:15px}.details-copy p{color:var(--text-secondary);line-height:1.8}.details-checks{list-style:none;padding:0;display:grid;gap:12px;margin-top:24px}.details-checks li{display:flex;gap:10px;color:var(--text-secondary);line-height:1.5}.details-checks i{color:var(--secondary);margin-top:4px}.details-package{padding:28px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;box-shadow:var(--shadow-md)}.details-package h3{font:800 1.4rem var(--font-heading);color:var(--text-primary)}.details-package .package-price{font:900 2rem var(--font-heading);color:var(--secondary);margin:10px 0 20px}.details-package ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}.details-package li{color:var(--text-secondary);font-size:.88rem}.details-package li i{color:var(--secondary);margin-right:8px}
+.details-faq-grid{max-width:900px;margin:auto}.details-faq-grid .accordion-item{background:var(--bg-card);border:1px solid var(--border-color);margin-bottom:12px;border-radius:16px!important;overflow:hidden}.details-faq-grid .accordion-button{background:var(--bg-card);color:var(--text-primary);font-weight:800;box-shadow:none;padding:20px}.details-faq-grid .accordion-button:not(.collapsed){background:var(--secondary-light);color:var(--secondary)}.details-faq-grid .accordion-body{color:var(--text-secondary);line-height:1.75}
+.details-related{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.related-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:22px;padding:24px}.related-card i{color:var(--secondary);font-size:1.5rem;margin-bottom:15px}.related-card h3{font:800 1.2rem var(--font-heading);color:var(--text-primary)}.related-card a{color:var(--secondary);font-weight:800;text-decoration:none;font-size:.85rem}
+.details-cta{padding:0 0 100px;background:var(--bg-primary)}.details-cta-box{background:var(--gradient-secondary);color:#fff;border-radius:30px;padding:55px;text-align:center}.details-cta-box h2{font:800 clamp(2.2rem,4vw,3.5rem)/1.08 var(--font-heading);margin-bottom:14px}.details-cta-box p{max-width:650px;margin:0 auto 25px;line-height:1.75;opacity:.9}
+@media(max-width:991px){.details-hero-grid,.details-content-grid{grid-template-columns:1fr}.details-feature-grid{grid-template-columns:1fr 1fr}.details-related{grid-template-columns:1fr 1fr}.details-hero-image{height:400px}}
+@media(max-width:767px){.details-hero{padding:125px 0 70px}.details-section{padding:70px 0}.details-feature-grid,.details-related{grid-template-columns:1fr}.details-hero-image{height:320px}.details-cta{padding-bottom:70px}.details-cta-box{padding:38px 24px}}
+</style>
+</head>
+<body class="details-page">
+<div class="preloader"><div class="preloader-spinner"></div></div>
+<nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+<div class="collapse navbar-collapse" id="navbarMain">
+<button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+<li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+</ul>
+<div class="mobile-nav-actions d-lg-none"><a class="btn-login" href="parent-login.html">Login</a><a class="btn-signup" href="register.html">Sign Up</a></div>
+</div>
+<div class="navbar-actions">
+<button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+<button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+<a class="btn-login d-none d-xl-inline-flex" href="parent-login.html">Login</a>
+<a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+</div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<main>
+<section class="details-hero"><div class="container"><div class="details-breadcrumb"><a href="services.html">Services</a><i class="fas fa-chevron-right"></i><span id="breadcrumbTitle">Service Details</span></div><div class="details-hero-grid"><div><span class="details-tag" id="detailTag">Service</span><h1 id="detailTitle">Service Details</h1><p id="detailIntro"></p><div class="details-price" id="detailPrice"></div><div class="details-hero-actions"><a class="btn-playzone btn-primary-custom btn-lg-playzone" href="booking.html"><i class="fas fa-calendar-check"></i> Book This Service</a><a class="btn-playzone btn-outline-custom btn-lg-playzone" href="services.html"><i class="fas fa-arrow-left"></i> Back to Services</a></div></div><div class="details-hero-image"><img alt="" id="detailImage" src=""/></div></div></div></section>
+<section class="details-section alt"><div class="container"><div class="details-heading"><span class="section-badge">What's Included</span><h2>Everything families need for a great experience.</h2><p id="includedIntro"></p></div><div class="details-feature-grid" id="featureGrid"></div></div></section>
+<section class="details-section"><div class="container"><div class="details-content-grid"><div class="details-copy"><span class="section-badge">About This Service</span><h3 id="aboutTitle"></h3><div id="aboutCopy"></div><ul class="details-checks" id="checkList"></ul></div><aside class="details-package"><span class="section-badge">Recommended</span><h3 id="packageTitle"></h3><div class="package-price" id="packagePrice"></div><ul id="packageList"></ul><a class="btn-playzone btn-primary-custom w-100 justify-content-center" href="booking.html">Continue to Booking <i class="fas fa-arrow-right"></i></a></aside></div></div></section>
+<section class="details-section alt"><div class="container"><div class="details-heading"><span class="section-badge">FAQs</span><h2>Questions about this service?</h2><p>Common answers are shown here for the selected service.</p></div><div class="details-faq-grid accordion" id="detailFaq"></div></div></section>
+<section class="details-section"><div class="container"><div class="details-heading"><span class="section-badge">Explore More</span><h2>Other KidNest experiences.</h2></div><div class="details-related" id="relatedGrid"></div></div></section>
+<section class="details-cta"><div class="container"><div class="details-cta-box"><h2>Ready to make it a KidNest day?</h2><p>Choose your preferred date and let us take care of the rest.</p><a class="btn-playzone btn-light-custom btn-lg-playzone" href="booking.html"><i class="fas fa-calendar-check"></i> Book Now</a></div></div></section>
+</main>
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<!-- Footer Brand -->
+<div class="col-lg-4 col-md-6">
+<a class="footer-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+<a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Quick Links</h6>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="play-zones.html">Play Zones</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="pricing.html">Membership</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Services</h6>
+<ul class="footer-links">
+<li><a href="services.html">Birthday Parties</a></li>
+<li><a href="services.html">After-School</a></li>
+<li><a href="services.html">Holiday Camps</a></li>
+<li><a href="services.html">Workshops</a></li>
+<li><a href="safety.html">Safety Standards</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-lg-4 col-md-6">
+<h6 class="footer-title">Contact Us</h6>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+<span>123 Fun Street, Play City, PC 12345</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@kidsplayzone.com</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+</div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+<div class="row align-items-center">
+<div class="col-md-6">
+<p>© 2026 KidNest. All rights reserved.</p>
+</div>
+<div class="col-md-6">
+<div class="footer-bottom-links justify-content-md-end d-flex">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer><button aria-label="Back to top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script><script src="js/main.js"></script>
+<script>
+const services={
+'open-play':{tag:'Play',title:'Open Play',price:'From $12',unit:'/ child',image:'images/site/service-details-1.webp',intro:'Flexible indoor play sessions where children can climb, slide, imagine and explore at their own pace.',features:[['puzzle-piece','Flexible Sessions','Choose a time that fits your family.'],['child','Age-Based Zones','Designed play areas for different stages.'],['shield-heart','Safe Environment','Clean, supervised spaces built for active play.']],about:'Open Play is the easiest way to enjoy the full KidNest experience without committing to a party or program. Children can move between age-appropriate areas while parents enjoy a comfortable, family-friendly environment.',checks:['Access to selected play zones','Supervised indoor play environment','Age-group appropriate activities','Flexible session booking','Parent seating and family facilities'],package:'Standard Play Session',packagePrice:'$12 / child',packageList:['One play session','Access to eligible zones','Safety briefing','Parent seating'],faqs:[['What age groups can use Open Play?','Open Play is organized around age-based zones so children can enjoy activities suited to their development.'],['Can I book more than one session?','Yes. Families can reserve multiple sessions when availability allows.'],['Is a parent required to stay?','Parents or guardians remain responsible for their children unless a specific supervised program says otherwise.']]},
+'birthday-parties':{tag:'Parties',title:'Birthday Parties',price:'From $249',unit:'/ package',image:'images/site/birthday-room.jpg',intro:'A complete birthday experience with private celebration space, a party host, activities and flexible add-ons.',features:[['cake-candles','Dedicated Host','A team member keeps the celebration moving.'],['gift','Party Setup','Decor and themed touches create a celebration-ready space.'],['utensils','Food Options','Choose convenient food and refreshment packages.']],about:'Our birthday packages take the stress out of planning. Kids get an exciting play experience while parents get a structured celebration with a dedicated host and customizable options.',checks:['Private celebration area','Dedicated party host','Age-appropriate play activities','Decoration options','Food and cake add-ons','Digital invitation support'],package:'Classic Birthday Package',packagePrice:'$249 / package',packageList:['Up to 12 children','Private party area','Host for 90 minutes','Basic decorations','Juice and snacks'],faqs:[['How many children can attend?','The demo package supports up to 12 children, with larger packages available.'],['Can I add decorations and food?','Yes. Decoration, food, cake and activity upgrades can be added during booking.'],['How early should I book?','For popular weekend slots, booking several weeks in advance is recommended.']]},
+'workshops':{tag:'Learning',title:'Creative Workshops',price:'From $18',unit:'/ child',image:'images/site/service-details-3.webp',intro:'Hands-on art, STEM and maker sessions that turn curiosity into something children can create and take home.',features:[['palette','Creative Projects','Every session has a practical project.'],['flask','STEM Activities','Simple experiments make learning playful.'],['users','Small Groups','Activities are structured for focused participation.']],about:'Creative Workshops blend learning and play. Each session uses hands-on activities to help children experiment, collaborate and build confidence while making something tangible.',checks:['Guided instructor-led activity','Materials included','Small-group format','Age-appropriate projects','Take-home creation'],package:'Single Workshop',packagePrice:'$18 / child',packageList:['One workshop session','All materials','Instructor guidance','Take-home project'],faqs:[['Do children need prior experience?','No. Workshops are designed for beginners and adjusted by age group.'],['Are materials included?','Yes, standard workshop materials are included in the displayed price.'],['Can schools book private workshops?','Yes. Private group requests can be handled through the contact or events flow.']]},
+'holiday-camps':{tag:'Learning',title:'Holiday Camps',price:'From $99',unit:'/ week',image:'images/site/service-details-4.webp',intro:'Multi-day themed programs combining active play, creative challenges, team games and supervised downtime.',features:[['sun','Daily Themes','Fresh activities keep each day engaging.'],['people-group','Team Play','Children build confidence through group challenges.'],['clock','Structured Days','A clear routine balances movement, creativity and rest.']],about:'Holiday Camps give families a reliable, activity-filled option during school breaks. Each week combines active play, creative projects and social challenges in a supervised environment.',checks:['Themed daily schedule','Supervised activities','Indoor and creative play','Team games','Break and snack periods'],package:'Camp Week',packagePrice:'$99 / week',packageList:['Five camp days','Daily activities','Supervised play','Creative materials'],faqs:[['What should children bring?','Families receive a simple packing guide before the camp starts.'],['Are camps age grouped?','Yes. Activities are planned around age and developmental needs.'],['Can I book individual days?','Availability depends on the camp schedule; weekly packages are the default demo option.']]},
+'membership':{tag:'Family',title:'Family Membership',price:'From $39',unit:'/ month',image:'images/site/service-details-5.webp',intro:'A flexible membership for families who want more play, member pricing and exclusive KidNest perks.',features:[['percent','Member Rates','Save on eligible visits and selected services.'],['calendar-check','Bonus Sessions','Enjoy included or discounted extra visits.'],['bolt','Early Access','Get priority access to selected events and offers.']],about:'Family Membership is built for regular visitors. Members receive better value across repeat visits, plus selected perks that make planning family time easier.',checks:['Member visit pricing','Bonus session allowance','Selected event access','Membership dashboard support','Renewal reminders'],package:'Family Membership',packagePrice:'$39 / month',packageList:['Member pricing','Monthly session allowance','Event early access','Family account perks'],faqs:[['Can more than one child use a membership?','Yes. Family membership is designed around the registered family account, subject to plan rules.'],['Can I cancel my membership?','Demo plans can be cancelled according to the selected plan terms.'],['Where can I manage remaining sessions?','The future Parent Dashboard will show membership usage and remaining sessions.']]},
+'private-events':{tag:'Parties',title:'Private Events',price:'Custom',unit:'/ quote',image:'images/site/service-details-6.webp',intro:'A flexible private venue for school groups, family gatherings, team days and special occasions.',features:[['building','Private Venue','Reserve dedicated areas for your group.'],['wand-magic-sparkles','Custom Setup','Tailor activities and layout to the event.'],['users','Group Rates','Packages can be shaped around your guest count.']],about:'Private Events transform KidNest into a dedicated space for your group. Our mock template flow supports custom event requirements, from guest count to activities and catering.',checks:['Private venue options','Custom activity planning','Flexible guest capacity','Food and refreshment options','Dedicated event support'],package:'Custom Event',packagePrice:'Request a quote',packageList:['Private space','Custom activity plan','Event coordination','Optional catering'],faqs:[['What types of private events can I host?','Family gatherings, school groups, team days and special celebrations are all suitable.'],['Can the event be customized?','Yes. Activities, layout, food and timing can be configured around the event.'],['How do I request a quote?','Use the booking or contact CTA and provide your preferred date, group size and requirements.']]}
+};
+const fallback=services['open-play'];const key=new URLSearchParams(location.search).get('service')||'open-play';const d=services[key]||fallback;
+document.title=d.title+' | KidNest';
+document.getElementById('breadcrumbTitle').textContent=d.title;document.getElementById('detailTag').textContent=d.tag;document.getElementById('detailTitle').textContent=d.title;document.getElementById('detailIntro').textContent=d.intro;document.getElementById('detailPrice').innerHTML=d.price+' <small>'+d.unit+'</small>';const img=document.getElementById('detailImage');img.src=d.image;img.alt=d.title+' at KidNest';
+document.getElementById('includedIntro').textContent='A clear overview of what families can expect from '+d.title+'.';document.getElementById('aboutTitle').textContent='Designed for fun, confidence and easy planning.';document.getElementById('aboutCopy').innerHTML='<p>'+d.about+'</p>';
+document.getElementById('featureGrid').innerHTML=d.features.map(f=>`<article class="details-feature"><i class="fas fa-${f[0]}"></i><h3>${f[1]}</h3><p>${f[2]}</p></article>`).join('');document.getElementById('checkList').innerHTML=d.checks.map(x=>`<li><i class="fas fa-check-circle"></i>${x}</li>`).join('');document.getElementById('packageTitle').textContent=d.package;document.getElementById('packagePrice').textContent=d.packagePrice;document.getElementById('packageList').innerHTML=d.packageList.map(x=>`<li><i class="fas fa-check"></i>${x}</li>`).join('');document.getElementById('detailFaq').innerHTML=d.faqs.map((f,i)=>`<div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button ${i?'collapsed':''}" type="button" data-bs-toggle="collapse" data-bs-target="#df${i}">${f[0]}</button></h3><div id="df${i}" class="accordion-collapse collapse ${i===0?'show':''}" data-bs-parent="#detailFaq"><div class="accordion-body">${f[1]}</div></div></div>`).join('');
+const rel=Object.entries(services).filter(([k])=>k!==key).slice(0,3);document.getElementById('relatedGrid').innerHTML=rel.map(([k,v])=>`<article class="related-card"><i class="fas fa-${v.features[0][0]}"></i><h3>${v.title}</h3><a href="service-details.html?service=${k}">View Details <i class="fas fa-arrow-right"></i></a></article>`).join('');
+</script>
+</body></html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Meet KidNest, a premium indoor play destination built around safe play, active learning, joyful family experiences, and thoughtful child development." name="description"/>
+<meta content="kids play zone, indoor play area, about us, child development, birthday parties, safe play" name="keywords"/>
+<meta content="KidNest" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="About KidNest | Play, Learn &amp; Grow Together" property="og:title"/>
+<meta content="Discover the people, purpose, milestones and safety standards behind KidNest." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>About Us | KidNest - Play, Learn &amp; Grow</title><link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&amp;family=Nunito:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    :root{--about-purple:#7b2ff7;--about-teal:#00c9a7;--about-yellow:#ffc857;--about-pink:#ff6b9d}
+    .about-page{overflow-x:hidden;overflow-y:visible}
+    .about-hero{position:relative;padding:155px 0 95px;background:var(--bg-primary);isolation:isolate}
+    .about-hero:before{content:"";position:absolute;inset:auto -12% -45% auto;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,247,.14),transparent 68%);z-index:-1}
+    .about-hero:after{content:"";position:absolute;left:-14%;top:-30%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.11),transparent 68%);z-index:-1}
+    .about-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
+    .about-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.84rem;font-weight:800;letter-spacing:.02em}
+    .about-hero h1{font:800 clamp(3rem,5.5vw,5rem)/1.02 var(--font-heading);color:var(--text-primary);margin:20px 0 22px;max-width:720px}
+    .about-hero h1 span{background:var(--gradient-secondary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .about-hero p{font-size:1.08rem;line-height:1.8;color:var(--text-secondary);max-width:650px;margin-bottom:30px}
+    .about-hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:34px}
+    .about-trust{display:flex;align-items:center;gap:15px;color:var(--text-secondary);font-size:.9rem}
+    .about-trust-avatars{display:flex;padding-left:8px}
+    .about-trust-avatars img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:3px solid var(--bg-primary);margin-left:-8px}
+    .about-trust strong{color:var(--text-primary)}
+    .about-hero-visual{position:relative;min-height:560px}
+    .about-main-photo{position:absolute;inset:0 45px 45px 0;border-radius:34px;overflow:hidden;box-shadow:var(--shadow-xl);border:8px solid var(--bg-card)}
+    .about-main-photo img{width:100%;height:100%;object-fit:cover}
+    .about-photo-accent{position:absolute;right:0;top:55px;width:150px;height:150px;border-radius:28px;overflow:hidden;border:7px solid var(--bg-card);box-shadow:var(--shadow-lg);transform:rotate(5deg)}
+    .about-photo-accent img{width:100%;height:100%;object-fit:cover}
+    .about-float-card{position:absolute;left:-22px;bottom:0;width:240px;padding:18px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;box-shadow:var(--shadow-lg);display:flex;gap:13px;align-items:center}
+    .about-float-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--secondary-light);color:var(--secondary);font-size:1.15rem;flex:0 0 auto}
+    .about-float-card strong{display:block;font:800 1.35rem/1 var(--font-heading);color:var(--text-primary)}
+    .about-float-card span{display:block;color:var(--text-secondary);font-size:.8rem;margin-top:5px}
+    .about-shape{position:absolute;right:16px;bottom:6px;width:54px;height:54px;background:var(--about-yellow);border-radius:50% 40% 50% 40%;transform:rotate(20deg);z-index:-1}
+
+    .about-proof{padding:0 0 85px;background:var(--bg-primary)}
+    .about-proof-wrap{background:var(--gradient-secondary);border-radius:24px;padding:30px 35px;color:#fff;box-shadow:var(--shadow-lg)}
+    .about-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+    .about-proof-item{display:flex;align-items:center;gap:14px}
+    .about-proof-item i{font-size:1.35rem;opacity:.9}
+    .about-proof-item strong{display:block;font:800 1.55rem/1 var(--font-heading)}
+    .about-proof-item span{font-size:.78rem;opacity:.85}
+
+    .about-story{padding:95px 0;background:var(--bg-secondary)}
+    .about-story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:75px;align-items:center}
+    .about-story-media{position:relative;padding:0 35px 35px 0}
+    .about-story-media-main{height:540px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-xl)}
+    .about-story-media-main img{width:100%;height:100%;object-fit:cover}
+    .about-story-media-small{position:absolute;right:0;bottom:0;width:205px;height:205px;border:7px solid var(--bg-secondary);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg)}
+    .about-story-media-small img{width:100%;height:100%;object-fit:cover}
+    .about-story-copy h2{font:800 clamp(2.3rem,4vw,3.6rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0 20px}
+    .about-story-copy p{color:var(--text-secondary);line-height:1.82}
+    .about-story-points{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:28px}
+    .about-story-point{display:flex;gap:11px;align-items:flex-start}
+    .about-story-point i{color:var(--about-teal);margin-top:5px}
+    .about-story-point strong{color:var(--text-primary);font-size:.95rem}
+
+    .about-values{padding:100px 0;background:var(--bg-primary)}
+    .about-heading{text-align:center;max-width:700px;margin:0 auto 52px}
+    .about-heading h2{font:800 clamp(2.3rem,4vw,3.6rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0}
+    .about-heading p{color:var(--text-secondary);line-height:1.75;margin:0}
+    .about-value-card{height:100%;padding:30px;border:1px solid var(--border-color);background:var(--bg-card);border-radius:24px;transition:var(--transition-normal);position:relative;overflow:hidden}
+    .about-value-card:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-40px;top:-40px;background:var(--secondary-light)}
+    .about-value-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:rgba(123,47,247,.3)}
+    .about-value-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:var(--secondary-light);color:var(--secondary);font-size:1.25rem;margin-bottom:22px;position:relative;z-index:1}
+    .about-value-card h3{font:800 1.35rem var(--font-heading);color:var(--text-primary);margin-bottom:10px}
+    .about-value-card p{color:var(--text-secondary);line-height:1.7;margin:0}
+
+    .about-team{padding:100px 0;background:var(--bg-secondary)}
+    .about-team-card{height:100%;background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;overflow:hidden;transition:var(--transition-normal)}
+    .about-team-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
+    .about-team-photo{height:300px;position:relative;overflow:hidden}
+    .about-team-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+    .about-team-card:hover .about-team-photo img{transform:scale(1.05)}
+    .about-team-role{position:absolute;left:18px;bottom:18px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:#222;font-size:.74rem;font-weight:800}
+    [data-theme="dark"] .about-team-role{background:rgba(25,25,35,.92);color:#fff}
+    .about-team-body{padding:23px}
+    .about-team-body h3{font:800 1.35rem var(--font-heading);color:var(--text-primary);margin:0 0 4px}
+    .about-team-body p{font-size:.88rem;color:var(--text-secondary);line-height:1.65;margin:0 0 15px}
+    .about-socials{display:flex;gap:8px}
+    .about-socials a{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--border-color);color:var(--text-secondary);text-decoration:none;transition:.2s}
+    .about-socials a:hover{color:var(--secondary);border-color:var(--secondary)}
+
+    .about-history{padding:100px 0;background:var(--bg-primary)}
+    .about-history-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .about-history-intro h2{font:800 clamp(2.3rem,4vw,3.5rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0 18px}
+    .about-history-intro p{color:var(--text-secondary);line-height:1.8}
+    .about-timeline{position:relative;padding-left:32px}
+    .about-timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:10px;width:2px;background:var(--border-color)}
+    .about-timeline-item{position:relative;padding:0 0 38px}
+    .about-timeline-item:last-child{padding-bottom:0}
+    .about-timeline-item:before{content:"";position:absolute;left:-32px;top:3px;width:16px;height:16px;border-radius:50%;background:var(--secondary);box-shadow:0 0 0 6px var(--secondary-light)}
+    .about-year{display:inline-block;color:var(--secondary);font-weight:900;font-size:.86rem;margin-bottom:6px}
+    .about-timeline-item h3{font:800 1.3rem var(--font-heading);color:var(--text-primary);margin-bottom:7px}
+    .about-timeline-item p{color:var(--text-secondary);line-height:1.7;margin:0}
+
+    .about-safety{padding:100px 0;background:var(--bg-secondary)}
+    .about-safety-box{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center;padding:50px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:30px;box-shadow:var(--shadow-md)}
+    .about-safety-image{height:410px;border-radius:22px;overflow:hidden}
+    .about-safety-image img{width:100%;height:100%;object-fit:cover}
+    .about-safety-copy h2{font:800 clamp(2.1rem,3.7vw,3.3rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0}
+    .about-safety-copy p{color:var(--text-secondary);line-height:1.78}
+    .about-safety-list{display:grid;grid-template-columns:1fr 1fr;gap:13px 22px;padding:0;margin:25px 0 0;list-style:none}
+    .about-safety-list li{display:flex;gap:9px;color:var(--text-secondary);font-size:.9rem;line-height:1.5}
+    .about-safety-list i{color:var(--about-teal);margin-top:4px}
+
+    .about-testimonials{padding:100px 0;background:var(--bg-primary)}
+    .about-quote-card{height:100%;padding:30px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;position:relative}
+    .about-quote-card:before{content:"\201C";position:absolute;right:25px;top:10px;font:800 5rem/1 var(--font-heading);color:var(--secondary-light)}
+    .about-stars{color:#ffb400;letter-spacing:2px;margin-bottom:18px}
+    .about-quote-card p{color:var(--text-secondary);line-height:1.75;position:relative;z-index:1}
+    .about-reviewer{display:flex;align-items:center;gap:12px;margin-top:20px}
+    .about-reviewer img{width:45px;height:45px;border-radius:50%;object-fit:cover}
+    .about-reviewer strong{display:block;color:var(--text-primary);font-size:.9rem}
+    .about-reviewer span{font-size:.76rem;color:var(--text-secondary)}
+
+    .about-cta{padding:0 0 100px;background:var(--bg-primary)}
+    .about-cta-box{position:relative;overflow:hidden;padding:55px 60px;border-radius:30px;background:var(--gradient-hero);color:#fff}
+    .about-cta-box:after{content:"";position:absolute;right:-90px;top:-120px;width:320px;height:320px;border:55px solid rgba(255,255,255,.08);border-radius:50%}
+    .about-cta-box h2{font:800 clamp(2.2rem,4vw,3.5rem)/1.05 var(--font-heading);margin:0 0 14px;max-width:720px}
+    .about-cta-box p{max-width:650px;line-height:1.75;opacity:.92;margin:0 0 25px}
+    .about-cta-box .btn{position:relative;z-index:2}
+
+
+    .about-founders{padding:100px 0;background:var(--bg-primary)}
+    .about-founder-feature{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:30px;padding:28px;box-shadow:var(--shadow-lg);overflow:hidden}
+    .about-founder-photo{height:500px;border-radius:24px;overflow:hidden;position:relative}.about-founder-photo img{width:100%;height:100%;object-fit:cover}
+    .about-founder-badge{position:absolute;left:20px;bottom:20px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:16px;padding:14px 17px;box-shadow:var(--shadow-md)}.about-founder-badge strong{display:block;color:var(--text-primary);font:800 1.15rem var(--font-heading)}.about-founder-badge span{font-size:.78rem;color:var(--text-secondary)}
+    .about-founder-copy h2{font:800 clamp(2.3rem,4vw,3.7rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0 18px}.about-founder-copy p{color:var(--text-secondary);line-height:1.82}.about-founder-quote{margin:28px 0;padding:22px;border-left:4px solid var(--secondary);background:var(--secondary-light);border-radius:0 18px 18px 0;color:var(--text-primary);font-size:1.05rem;font-weight:700}.about-founder-signature{font:700 1.35rem var(--font-heading);color:var(--text-primary)}
+    .about-philosophy{padding:100px 0;background:var(--bg-secondary)}.about-philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.about-philosophy-card{padding:34px;border-radius:24px;background:var(--bg-card);border:1px solid var(--border-color);height:100%;transition:var(--transition-normal)}.about-philosophy-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}.about-philosophy-number{font:900 3.2rem/1 var(--font-heading);color:var(--secondary-light);margin-bottom:16px}.about-philosophy-card h3{font:800 1.45rem var(--font-heading);color:var(--text-primary)}.about-philosophy-card p{color:var(--text-secondary);line-height:1.75;margin:0}
+    .about-facilities{padding:100px 0;background:var(--bg-primary)}.about-facility-card{height:100%;position:relative;border-radius:24px;overflow:hidden;min-height:310px}.about-facility-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s}.about-facility-card:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.78))}.about-facility-card:hover img{transform:scale(1.06)}.about-facility-content{position:absolute;z-index:2;left:24px;right:24px;bottom:22px;color:#fff}.about-facility-content h3{font:800 1.45rem var(--font-heading);margin-bottom:6px}.about-facility-content p{font-size:.86rem;line-height:1.55;margin:0;opacity:.9}
+    .about-impact{padding:100px 0;background:var(--bg-secondary)}.about-impact-box{display:grid;grid-template-columns:1fr 1.4fr;gap:55px;align-items:center}.about-impact-copy h2{font:800 clamp(2.3rem,4vw,3.6rem)/1.08 var(--font-heading);color:var(--text-primary);margin:15px 0}.about-impact-copy p{color:var(--text-secondary);line-height:1.8}.about-impact-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}.about-impact-stat{padding:25px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px}.about-impact-stat strong{display:block;font:900 2rem var(--font-heading);color:var(--secondary)}.about-impact-stat span{font-size:.82rem;color:var(--text-secondary)}
+    .about-awards{padding:90px 0;background:var(--bg-primary)}.about-award-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.about-award{padding:25px 18px;text-align:center;border:1px dashed var(--border-color);border-radius:20px;background:var(--bg-card)}.about-award i{font-size:1.6rem;color:var(--about-yellow);margin-bottom:12px}.about-award strong{display:block;color:var(--text-primary);font:800 1rem var(--font-heading)}.about-award span{display:block;color:var(--text-secondary);font-size:.74rem;margin-top:4px}
+    @media(max-width:991.98px){.about-founder-feature,.about-impact-box{grid-template-columns:1fr}.about-founder-photo{height:430px}.about-award-row{grid-template-columns:1fr 1fr}}
+    @media(max-width:767.98px){.about-founders,.about-philosophy,.about-facilities,.about-impact,.about-awards{padding:70px 0}.about-philosophy-grid{grid-template-columns:1fr}.about-founder-feature{padding:18px}.about-founder-photo{height:360px}.about-impact-stats{grid-template-columns:1fr}.about-award-row{grid-template-columns:1fr 1fr}}
+    @media(max-width:991.98px){
+      .about-hero{padding:130px 0 75px}.about-hero-grid,.about-story-grid,.about-history-grid,.about-safety-box{grid-template-columns:1fr;gap:45px}
+      .about-hero-visual{min-height:500px}.about-proof-grid{grid-template-columns:1fr 1fr}.about-story-media{max-width:700px}.about-safety-image{height:360px}
+    }
+    @media(max-width:767.98px){
+      .about-hero{padding:115px 0 60px}.about-hero-grid{gap:35px}.about-hero h1{font-size:2.9rem}.about-hero p{font-size:1rem}
+      .about-hero-visual{min-height:400px}.about-main-photo{inset:0 20px 30px 0;border-width:5px}.about-photo-accent{width:105px;height:105px;right:0;top:35px;border-width:5px}.about-float-card{left:5px;width:205px;padding:14px}.about-float-icon{width:40px;height:40px}.about-float-card strong{font-size:1.1rem}
+      .about-proof{padding-bottom:60px}.about-proof-wrap{padding:24px 18px}.about-proof-grid{grid-template-columns:1fr 1fr;gap:22px 12px}.about-proof-item strong{font-size:1.2rem}.about-proof-item span{font-size:.7rem}
+      .about-story,.about-values,.about-team,.about-history,.about-safety,.about-testimonials{padding:70px 0}.about-story-points,.about-safety-list{grid-template-columns:1fr}.about-story-media-main{height:430px}.about-story-media-small{width:150px;height:150px}
+      .about-safety-box{padding:25px}.about-safety-image{height:300px}.about-cta{padding-bottom:70px}.about-cta-box{padding:38px 24px}.about-timeline{padding-left:28px}.about-timeline-item:before{left:-28px}.about-timeline:before{left:5px}
+    }
+  </style>
+</head>
+<body class="about-page">
+<div class="preloader"><div class="preloader-spinner"></div></div>
+<nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+<div class="collapse navbar-collapse" id="navbarMain">
+<button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+<li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+</ul>
+<div class="mobile-nav-actions d-lg-none"><a class="btn-login" href="parent-login.html">Login</a><a class="btn-signup" href="register.html">Sign Up</a></div>
+</div>
+<div class="navbar-actions">
+<button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+<button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+<a class="btn-login d-none d-xl-inline-flex" href="parent-login.html">Login</a>
+<a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+</div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<main>
+<section aria-labelledby="about-title" class="about-hero">
+<div class="container">
+<div class="about-hero-grid">
+<div class="animate-on-scroll">
+<span class="about-eyebrow"><i class="fas fa-heart"></i> The KidNest Story</span>
+<h1 id="about-title">More Than a Play Area. <span>A Place to Grow.</span></h1>
+<p>KidNest brings together active play, creative discovery and meaningful family time in one thoughtfully designed indoor playground. Every zone is built to help children move, imagine, explore and build confidence.</p>
+<div class="about-hero-actions">
+<a class="btn-playzone btn-primary-custom" href="play-zones.html"><i class="fas fa-compass"></i> Explore Our Zones</a>
+<a class="btn-playzone btn-secondary-custom" href="#our-story"><i class="fas fa-arrow-down"></i> Our Story</a>
+</div>
+<div class="about-trust">
+<div aria-hidden="true" class="about-trust-avatars">
+<img alt="" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=80&amp;q=80"/>
+<img alt="" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=80&amp;q=80"/>
+<img alt="" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&amp;fit=crop&amp;w=80&amp;q=80"/>
+</div>
+<div><strong>Loved by 25,000+ families</strong><br/>across our growing play community</div>
+</div>
+</div>
+<div class="about-hero-visual animate-on-scroll delay-1">
+<div class="about-main-photo"><img alt="Children enjoying an indoor play area" src="images/user-supplied/about-hero.webp"/></div>
+<div class="about-photo-accent"><img alt="Child exploring a creative activity" src="https://images.unsplash.com/photo-1564429238961-5a8d0f6e4d9b?auto=format&amp;fit=crop&amp;w=400&amp;q=85"/></div>
+<div class="about-float-card"><div class="about-float-icon"><i class="fas fa-shield-heart"></i></div><div><strong>Safety First</strong><span>Designed for worry-free play</span></div></div>
+<div aria-hidden="true" class="about-shape"></div>
+</div>
+</div>
+</div>
+</section>
+<section aria-label="KidNest highlights" class="about-proof">
+<div class="container">
+<div class="about-proof-wrap">
+<div class="about-proof-grid">
+<div class="about-proof-item"><i class="fas fa-users"></i><div><strong>25K+</strong><span>Happy families</span></div></div>
+<div class="about-proof-item"><i class="fas fa-calendar-check"></i><div><strong>12+</strong><span>Years of play</span></div></div>
+<div class="about-proof-item"><i class="fas fa-child-reaching"></i><div><strong>8</strong><span>Purposeful zones</span></div></div>
+<div class="about-proof-item"><i class="fas fa-star"></i><div><strong>4.9/5</strong><span>Family rating</span></div></div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="story-title" class="about-story" id="our-story">
+<div class="container">
+<div class="about-story-grid">
+<div class="about-story-media animate-on-scroll">
+<div class="about-story-media-main"><img alt="Children playing together at KidNest" src="images/site/family.jpg"/></div>
+<div class="about-story-media-small"><img alt="Family spending time together" src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&amp;fit=crop&amp;w=400&amp;q=85"/></div>
+</div>
+<div class="about-story-copy animate-on-scroll delay-1">
+<span class="section-badge badge-secondary"><i class="fas fa-book-open"></i> Our Story</span>
+<h2 id="story-title">Built by Parents. Designed for Childhood.</h2>
+<p>KidNest started with a simple observation: children need places where they can be active, curious and wonderfully messy, while parents need a space that feels safe, clean and genuinely welcoming.</p>
+<p>So we created a play destination that balances both. From age-appropriate equipment and sensory corners to birthday experiences and quiet parent spaces, every detail has a job: make family time easier and childhood more memorable.</p>
+<div class="about-story-points">
+<div class="about-story-point"><i class="fas fa-circle-check"></i><div><strong>Purposeful play</strong><br/><small class="text-secondary">Activities that encourage movement and discovery.</small></div></div>
+<div class="about-story-point"><i class="fas fa-circle-check"></i><div><strong>Thoughtful spaces</strong><br/><small class="text-secondary">Zones planned around different ages and interests.</small></div></div>
+<div class="about-story-point"><i class="fas fa-circle-check"></i><div><strong>Family-first service</strong><br/><small class="text-secondary">Friendly support from booking to goodbye.</small></div></div>
+<div class="about-story-point"><i class="fas fa-circle-check"></i><div><strong>Clean by design</strong><br/><small class="text-secondary">Consistent cleaning and daily safety checks.</small></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="values-title" class="about-values">
+<div class="container">
+<div class="about-heading animate-on-scroll">
+<span class="section-badge badge-primary"><i class="fas fa-sparkles"></i> What Drives Us</span>
+<h2 id="values-title">Our Mission &amp; Values</h2>
+<p>We are here to make active childhood easier to find, safer to enjoy and more meaningful for the whole family.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg-3 animate-on-scroll"><article class="about-value-card"><div class="about-value-icon"><i class="fas fa-child-reaching"></i></div><h3>Child First</h3><p>We design around how children actually move, learn, imagine and interact.</p></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-1"><article class="about-value-card"><div class="about-value-icon"><i class="fas fa-shield-heart"></i></div><h3>Safety Always</h3><p>Clear rules, trained teams and regular equipment checks keep play confidently fun.</p></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-2"><article class="about-value-card"><div class="about-value-icon"><i class="fas fa-lightbulb"></i></div><h3>Curiosity Wins</h3><p>We turn ordinary play into opportunities for creativity, problem-solving and discovery.</p></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-3"><article class="about-value-card"><div class="about-value-icon"><i class="fas fa-people-roof"></i></div><h3>Families Together</h3><p>We create experiences where children have fun and parents feel part of the moment.</p></article></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="team-title" class="about-team">
+<div class="container">
+<div class="about-heading animate-on-scroll">
+<span class="section-badge badge-secondary"><i class="fas fa-users"></i> The People Behind Play</span>
+<h2 id="team-title">Meet Our Team</h2>
+<p>A friendly mix of play specialists, operations experts and child-focused hosts who make KidNest feel like your second home.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg-3 animate-on-scroll"><article class="about-team-card"><div class="about-team-photo"><img alt="Maya, KidNest founder" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;w=700&amp;q=85"/><span class="about-team-role">Founder &amp; CEO</span></div><div class="about-team-body"><h3>Maya Carter</h3><p>Built KidNest around one idea: better play creates better family memories.</p><div class="about-socials"><a aria-label="Maya LinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a><a aria-label="Maya Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-1"><article class="about-team-card"><div class="about-team-photo"><img alt="Sofia, child development lead" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=700&amp;q=85"/><span class="about-team-role">Child Development</span></div><div class="about-team-body"><h3>Sofia Bennett</h3><p>Shapes our age-based zones and makes every activity purposeful without losing the fun.</p><div class="about-socials"><a aria-label="Sofia LinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a><a aria-label="Sofia Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-2"><article class="about-team-card"><div class="about-team-photo"><img alt="Arjun, operations lead" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&amp;fit=crop&amp;w=700&amp;q=85"/><span class="about-team-role">Operations</span></div><div class="about-team-body"><h3>Arjun Mehta</h3><p>Keeps the play floor running smoothly, from safety routines to memorable events.</p><div class="about-socials"><a aria-label="Arjun LinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a><a aria-label="Arjun Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></article></div>
+<div class="col-md-6 col-lg-3 animate-on-scroll delay-3"><article class="about-team-card"><div class="about-team-photo"><img alt="Emma, family experience lead" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&amp;fit=crop&amp;w=700&amp;q=85"/><span class="about-team-role">Family Experience</span></div><div class="about-team-body"><h3>Emma Wilson</h3><p>Turns bookings, birthdays and everyday visits into warm, effortless experiences.</p><div class="about-socials"><a aria-label="Emma LinkedIn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a><a aria-label="Emma Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div></div></article></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="history-title" class="about-history">
+<div class="container">
+<div class="about-history-grid">
+<div class="about-history-intro animate-on-scroll">
+<span class="section-badge badge-primary"><i class="fas fa-clock-rotate-left"></i> Our Journey</span>
+<h2 id="history-title">A Small Idea That Kept Growing.</h2>
+<p>We have evolved from one neighborhood play space into a complete family destination while keeping the same promise: every visit should feel safe, joyful and worth remembering.</p>
+<a class="btn-playzone btn-secondary-custom mt-3" href="contact.html"><i class="fas fa-comments"></i> Talk to Our Team</a>
+</div>
+<div class="about-timeline animate-on-scroll delay-1">
+<div class="about-timeline-item"><span class="about-year">2012</span><h3>The First Play Floor</h3><p>KidNest opens its first indoor play center with a small team and a big belief in purposeful play.</p></div>
+<div class="about-timeline-item"><span class="about-year">2016</span><h3>Zones Get Smarter</h3><p>Age-based play, creative workshops and sensory experiences become part of the core KidNest model.</p></div>
+<div class="about-timeline-item"><span class="about-year">2020</span><h3>Safety Gets an Upgrade</h3><p>We formalize cleaning routines, equipment inspections and team training across every play session.</p></div>
+<div class="about-timeline-item"><span class="about-year">2024</span><h3>A Complete Family Experience</h3><p>Memberships, birthday packages, digital bookings and parent-friendly services come together in one platform.</p></div>
+<div class="about-timeline-item"><span class="about-year">Today</span><h3>Still Learning, Still Playing</h3><p>We continue to improve our spaces using family feedback, fresh ideas and a child-first design mindset.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="safety-title" class="about-safety">
+<div class="container">
+<div class="about-safety-box animate-on-scroll">
+<div class="about-safety-image"><img alt="KidNest safety-focused play experience" src="images/user-supplied/about-safety.webp"/></div>
+<div class="about-safety-copy">
+<span class="section-badge badge-secondary"><i class="fas fa-shield-halved"></i> Our Safety Promise</span>
+<h2 id="safety-title">The Fun Should Never Come at the Cost of Safety.</h2>
+<p>Safety is not a banner we put on the wall. It is part of how we plan zones, train our team, inspect equipment and communicate with families before and during every visit.</p>
+<ul class="about-safety-list">
+<li><i class="fas fa-check-circle"></i> Daily equipment checks</li>
+<li><i class="fas fa-check-circle"></i> Trained floor supervisors</li>
+<li><i class="fas fa-check-circle"></i> Age-based zone guidelines</li>
+<li><i class="fas fa-check-circle"></i> Regular deep cleaning</li>
+<li><i class="fas fa-check-circle"></i> Clear emergency procedures</li>
+<li><i class="fas fa-check-circle"></i> Secure check-in process</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<!-- Footer Brand -->
+<div class="col-lg-4 col-md-6">
+<a class="footer-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+<a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Quick Links</h6>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="play-zones.html">Play Zones</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="pricing.html">Membership</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Services</h6>
+<ul class="footer-links">
+<li><a href="services.html">Birthday Parties</a></li>
+<li><a href="services.html">After-School</a></li>
+<li><a href="services.html">Holiday Camps</a></li>
+<li><a href="services.html">Workshops</a></li>
+<li><a href="safety.html">Safety Standards</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-lg-4 col-md-6">
+<h6 class="footer-title">Contact Us</h6>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+<span>123 Fun Street, Play City, PC 12345</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@kidsplayzone.com</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+</div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+<div class="row align-items-center">
+<div class="col-md-6">
+<p>© 2026 KidNest. All rights reserved.</p>
+</div>
+<div class="col-md-6">
+<div class="footer-bottom-links justify-content-md-end d-flex">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.querySelectorAll('.about-socials a, .footer-social a, .footer-bottom a').forEach(function(link){
+        if(link.getAttribute('href') === '#') link.addEventListener('click', function(e){ e.preventDefault(); });
+      });
+    });
+  </script>
+</main></body>
+</html>

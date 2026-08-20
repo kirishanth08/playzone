@@ -1,0 +1,129 @@
+<!doctype html><html lang="en" dir="ltr" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="KidNest indoor play zone"><title>Book a Session | KidNest</title><link rel="icon" type="image/svg+xml" href="images/logo.svg"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"><link href="css/style.css" rel="stylesheet"><style>
+.page-shell{padding-top:100px;min-height:75vh}.special-hero{padding:70px 0 60px;background:var(--bg-secondary)}.special-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;box-shadow:var(--shadow-md);padding:32px}.special-kicker{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:999px;background:var(--primary-light);color:var(--primary);font-weight:900;letter-spacing:.04em;text-transform:uppercase;font-size:.78rem}.special-title{font-family:var(--font-heading);font-weight:900;color:var(--text-primary);font-size:clamp(2.6rem,6vw,5rem);line-height:.95}.special-text{color:var(--text-secondary);font-size:1.05rem;line-height:1.8}.soft-panel{background:var(--bg-primary);border:1px solid var(--border-color);border-radius:18px;padding:20px}.primary-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;text-decoration:none;background:var(--gradient-primary);color:#fff;border-radius:14px;padding:13px 20px;font-weight:900;transition:transform .2s ease,box-shadow .2s ease}.primary-btn:hover{color:#fff;transform:translateY(-2px);box-shadow:0 12px 24px rgba(255,107,53,.2)}.outline-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:1px solid var(--border-color);color:var(--text-primary);background:var(--bg-card);border-radius:14px;padding:13px 20px;font-weight:900}.outline-btn:hover{color:var(--primary);border-color:var(--primary)}.error-number{font-family:var(--font-heading);font-size:clamp(7rem,18vw,13rem);line-height:.75;font-weight:900;background:var(--gradient-primary);-webkit-background-clip:text;background-clip:text;color:transparent}.floating-dot{width:76px;height:76px;border-radius:50%;background:var(--primary-light);display:grid;place-items:center;color:var(--primary);font-size:2rem;animation:floatDot 3s ease-in-out infinite}@keyframes floatDot{50%{transform:translateY(-10px) rotate(5deg)}}.coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.coming-tile{padding:18px;border-radius:18px;background:var(--bg-primary);border:1px solid var(--border-color);text-align:center}.coming-tile strong{display:block;font-size:1.5rem;color:var(--text-primary)}.coming-tile span{font-size:.82rem;color:var(--text-secondary)}.booking-progress{height:8px;background:var(--bg-secondary);border-radius:999px;overflow:hidden}.booking-progress span{display:block;height:100%;width:33%;background:var(--gradient-primary);transition:width .3s ease}.booking-step{display:none}.booking-step.active{display:block}.step-pill{display:flex;align-items:center;gap:8px;color:var(--text-secondary);font-weight:800}.step-pill.active{color:var(--primary)}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);border-radius:16px;padding:16px;text-align:left;cursor:pointer;transition:.2s}.choice:hover{border-color:var(--primary);transform:translateY(-2px)}.choice.selected{border-color:var(--primary);background:var(--primary-light);box-shadow:0 0 0 2px rgba(255,107,53,.12)}.summary-list{list-style:none;padding:0;margin:0}.summary-list li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-color)}.summary-list li:last-child{border-bottom:0}.success-box{display:none;border:1px solid rgba(46,155,103,.3);background:rgba(46,155,103,.08);color:var(--text-primary);border-radius:18px;padding:22px}.success-box.show{display:block}.form-control,.form-select{background:var(--bg-primary);color:var(--text-primary);border-color:var(--border-color)}.form-control:focus,.form-select:focus{background:var(--bg-primary);color:var(--text-primary);border-color:var(--primary);box-shadow:0 0 0 .2rem var(--primary-light)}@media(max-width:767px){.page-shell{padding-top:85px}.choice-grid,.coming-grid{grid-template-columns:1fr}.special-card{padding:22px}}
+</style></head><body><!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+<div class="collapse navbar-collapse" id="navbarMain">
+<button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+<li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+</ul>
+<div class="mobile-nav-actions d-lg-none"><a class="btn-login" href="parent-login.html">Login</a><a class="btn-signup" href="register.html">Sign Up</a></div>
+</div>
+<div class="navbar-actions">
+<button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+<button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+<a class="btn-login d-none d-xl-inline-flex" href="parent-login.html">Login</a>
+<a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+</div>
+</div></nav>
+<div class="mobile-menu-overlay"></div><main class="page-shell"><section class="special-hero pb-4"><div class="container"><div class="row align-items-center g-4"><div class="col-lg-8"><span class="special-kicker"><i class="fas fa-calendar-check"></i> Book your visit</span><h1 class="special-title mt-4">Choose a time. Pick a zone. Let's play.</h1><p class="special-text mt-3 mb-0">A simple front-end booking flow for parents. Availability below uses realistic mock data and is ready to connect to a backend later.</p></div><div class="col-lg-4"><div class="soft-panel"><div class="d-flex justify-content-between mb-2"><span class="step-pill active" id="stepLabel1"><i class="fas fa-1"></i> Visit</span><span class="step-pill" id="stepLabel2"><i class="fas fa-2"></i> Slot</span><span class="step-pill" id="stepLabel3"><i class="fas fa-3"></i> Confirm</span></div><div class="booking-progress"><span id="progressBar"></span></div></div></div></div></div></section><section class="pb-5"><div class="container"><div class="row g-4"><div class="col-lg-8"><div class="special-card"><div class="booking-step active" id="step1"><h2 class="h3 fw-bold">1. Tell us about the visit</h2><p class="special-text">Select the date, age group and play zone.</p><div class="row g-3 mt-2"><div class="col-md-6"><label class="form-label fw-bold" for="visitDate">Visit date</label><input class="form-control form-control-lg" id="visitDate" type="date"></div><div class="col-md-6"><label class="form-label fw-bold" for="ageGroup">Age group</label><select class="form-select form-select-lg" id="ageGroup"><option value="">Choose age group</option><option>Toddlers · 1–3</option><option>Juniors · 4–6</option><option>Adventure · 7–10</option><option>Big Kids · 10–12</option></select></div></div><label class="form-label fw-bold mt-4">Choose a play zone</label><div class="choice-grid" id="zoneChoices"><button type="button" class="choice" data-value="Little Sprouts"><strong>Little Sprouts</strong><small class="d-block text-secondary">Ages 1–3 · ₹499</small></button><button type="button" class="choice" data-value="Junior Jungle"><strong>Junior Jungle</strong><small class="d-block text-secondary">Ages 4–6 · ₹599</small></button><button type="button" class="choice" data-value="Adventure Arena"><strong>Adventure Arena</strong><small class="d-block text-secondary">Ages 7–10 · ₹699</small></button><button type="button" class="choice" data-value="Big Kids Lab"><strong>Big Kids Lab</strong><small class="d-block text-secondary">Ages 10–12 · ₹699</small></button><button type="button" class="choice" data-value="Creative Studio"><strong>Creative Studio</strong><small class="d-block text-secondary">Ages 3–10 · ₹549</small></button><button type="button" class="choice" data-value="Sensory Cove"><strong>Sensory Cove</strong><small class="d-block text-secondary">Ages 2–8 · ₹499</small></button></div><div class="d-flex justify-content-end mt-4"><button type="button" class="primary-btn" id="findAvailability">Find Available Slots <i class="fas fa-arrow-right"></i></button></div></div><div class="booking-step" id="step2"><h2 class="h3 fw-bold">2. Choose your time</h2><p class="special-text">Available mock slots for your selected visit.</p><div class="choice-grid mt-3" id="slotChoices"><button type="button" class="choice" data-slot="10:00 AM"><strong>10:00 AM</strong><small class="d-block text-secondary">18 spots left</small></button><button type="button" class="choice" data-slot="12:30 PM"><strong>12:30 PM</strong><small class="d-block text-secondary">11 spots left</small></button><button type="button" class="choice" data-slot="3:00 PM"><strong>3:00 PM</strong><small class="d-block text-secondary">8 spots left</small></button><button type="button" class="choice" data-slot="5:30 PM"><strong>5:30 PM</strong><small class="d-block text-secondary">6 spots left</small></button></div><div class="d-flex justify-content-between mt-4"><button type="button" class="outline-btn" id="back1"><i class="fas fa-arrow-left"></i> Back</button><button type="button" class="primary-btn" id="continue2">Continue <i class="fas fa-arrow-right"></i></button></div></div><div class="booking-step" id="step3"><h2 class="h3 fw-bold">3. Confirm your booking</h2><p class="special-text">Add the child's details and confirm the visit.</p><div class="row g-3 mt-2"><div class="col-md-6"><label class="form-label fw-bold" for="childName">Child's name</label><input id="childName" class="form-control form-control-lg" required placeholder="e.g. Aria"></div><div class="col-md-6"><label class="form-label fw-bold" for="parentEmail">Parent email</label><input id="parentEmail" class="form-control form-control-lg" type="email" required placeholder="you@example.com"></div></div><div class="d-flex justify-content-between mt-4"><button type="button" class="outline-btn" id="back2"><i class="fas fa-arrow-left"></i> Back</button><button type="button" class="primary-btn" id="confirmBooking"><i class="fas fa-check"></i> Confirm Booking</button></div></div><div class="success-box mt-4" id="bookingSuccess"><div class="d-flex gap-3 align-items-start"><div class="floating-dot" style="width:50px;height:50px;font-size:1.2rem;animation:none"><i class="fas fa-check"></i></div><div><h3 class="h5 fw-bold mb-1">Booking confirmed</h3><p class="mb-2" id="successText"></p><a href="parent-dashboard.html" class="primary-btn">Go to Parent Dashboard</a></div></div></div></div></div><div class="col-lg-4"><div class="special-card"><span class="special-kicker"><i class="fas fa-receipt"></i> Your selection</span><ul class="summary-list mt-3"><li><span class="text-secondary">Date</span><strong id="sumDate">—</strong></li><li><span class="text-secondary">Age group</span><strong id="sumAge">—</strong></li><li><span class="text-secondary">Zone</span><strong id="sumZone">—</strong></li><li><span class="text-secondary">Time</span><strong id="sumTime">—</strong></li></ul><div class="soft-panel mt-3"><strong>Need help?</strong><p class="special-text small mb-2">Not sure which zone fits? Our team can help.</p><a href="contact.html" class="outline-btn w-100">Talk to Us</a></div></div></div></div></div></section></main><script>
+const state={step:1,zone:'',slot:''};const $=id=>document.getElementById(id);const showStep=n=>{state.step=n;document.querySelectorAll('.booking-step').forEach((x,i)=>x.classList.toggle('active',i===n-1));$('progressBar').style.width=(n*33.33)+'%';[1,2,3].forEach(i=>$('stepLabel'+i).classList.toggle('active',i<=n));};
+const date=$('visitDate');date.value=new Date().toISOString().slice(0,10);date.min=date.value;document.querySelectorAll('#zoneChoices .choice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#zoneChoices .choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.zone=b.dataset.value;$('sumZone').textContent=state.zone}));
+$('findAvailability').addEventListener('click',()=>{if(!date.value||!$('ageGroup').value||!state.zone){alert('Please choose a date, age group and play zone.');return}$('sumDate').textContent=date.value;$('sumAge').textContent=$('ageGroup').value;showStep(2)});
+document.querySelectorAll('#slotChoices .choice').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#slotChoices .choice').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');state.slot=b.dataset.slot;$('sumTime').textContent=state.slot}));
+$('back1').onclick=()=>showStep(1);$('continue2').onclick=()=>{if(!state.slot){alert('Please select a time slot.');return}showStep(3)};$('back2').onclick=()=>showStep(2);$('confirmBooking').onclick=()=>{const name=$('childName').value.trim(),email=$('parentEmail').value.trim();if(!name||!email||!$('parentEmail').checkValidity()){alert('Please enter a valid child name and parent email.');return} $('successText').textContent=`${name}'s ${state.zone} session is reserved for ${date.value} at ${state.slot}. A confirmation has been prepared for ${email}.`;$('bookingSuccess').classList.add('show');window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})};
+</script><!-- ===== Footer ===== -->
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<!-- Footer Brand -->
+<div class="col-lg-4 col-md-6">
+<a class="footer-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+<a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Quick Links</h6>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="play-zones.html">Play Zones</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="pricing.html">Membership</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Services</h6>
+<ul class="footer-links">
+<li><a href="services.html">Birthday Parties</a></li>
+<li><a href="services.html">After-School</a></li>
+<li><a href="services.html">Holiday Camps</a></li>
+<li><a href="services.html">Workshops</a></li>
+<li><a href="safety.html">Safety Standards</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-lg-4 col-md-6">
+<h6 class="footer-title">Contact Us</h6>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+<span>123 Fun Street, Play City, PC 12345</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@kidsplayzone.com</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+</div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+<div class="row align-items-center">
+<div class="col-md-6">
+<p>© 2026 KidNest. All rights reserved.</p>
+</div>
+<div class="col-md-6">
+<div class="footer-bottom-links justify-content-md-end d-flex">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- ===== Back to Top ===== -->
+<button aria-label="Back to top" class="back-to-top">
+<i class="fas fa-chevron-up"></i>
+</button>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/main.js"></script>
+</body></html>

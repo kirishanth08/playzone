@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="KidNest services for kids and families: birthday parties, open play, workshops, camps, memberships, private events and more." name="description"/>
+<meta content="kids play zone services, birthday parties, indoor play, kids workshops, holiday camps, private events" name="keywords"/>
+<meta content="KidNest" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Services | KidNest Indoor Play Area" property="og:title"/>
+<meta content="Explore KidNest experiences, celebrations, learning programs and family services." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>Services | KidNest - Indoor Play &amp; Family Experiences</title><link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Nunito:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .services-page{overflow-x:hidden;background:var(--bg-primary)}
+    .services-hero{padding:155px 0 90px;position:relative;overflow:hidden;background:var(--bg-primary)}
+    .services-hero:before{content:"";position:absolute;width:620px;height:620px;right:-250px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,247,.15),transparent 68%);pointer-events:none}
+    .services-hero:after{content:"";position:absolute;width:460px;height:460px;left:-220px;bottom:-260px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.12),transparent 68%);pointer-events:none}
+    .services-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:1}
+    .services-eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.84rem;font-weight:800}
+    .services-hero h1{font:800 clamp(2.9rem,5.5vw,5rem)/1.04 var(--font-heading);color:var(--text-primary);margin:20px 0}
+    .services-hero h1 span{background:var(--gradient-secondary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .services-hero p{font-size:1.08rem;line-height:1.8;color:var(--text-secondary);max-width:650px;margin-bottom:30px}
+    .services-hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+    .services-hero-visual{position:relative;min-height:470px}
+    .services-hero-photo{position:absolute;inset:0 45px 35px 0;border-radius:34px;overflow:hidden;border:8px solid var(--bg-card);box-shadow:var(--shadow-xl)}
+    .services-hero-photo img{width:100%;height:100%;object-fit:cover}
+    .services-mini-card{position:absolute;right:0;bottom:0;background:var(--bg-card);border:1px solid var(--border-color);border-radius:22px;padding:18px 20px;box-shadow:var(--shadow-lg);width:245px}
+    .services-mini-card i{width:45px;height:45px;border-radius:14px;background:var(--secondary-light);color:var(--secondary);display:grid;place-items:center;float:left;margin-right:12px}
+    .services-mini-card strong{display:block;color:var(--text-primary);font:800 1.35rem/1.1 var(--font-heading)}
+    .services-mini-card span{display:block;color:var(--text-secondary);font-size:.82rem;margin-top:4px}
+
+    .services-catalog{padding:100px 0;background:var(--bg-secondary)}
+    .services-heading{text-align:center;max-width:720px;margin:0 auto 45px}
+    .services-heading h2{font:800 clamp(2.3rem,4vw,3.5rem)/1.08 var(--font-heading);color:var(--text-primary);margin:14px 0}
+    .services-heading p{color:var(--text-secondary);line-height:1.75;margin:0}
+    .services-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:32px}
+    .services-filters{display:flex;gap:8px;flex-wrap:wrap}
+    .service-filter{border:1px solid var(--border-color);background:var(--bg-card);color:var(--text-secondary);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.84rem;cursor:pointer;transition:var(--transition-fast)}
+    .service-filter:hover,.service-filter.active{background:var(--secondary);border-color:var(--secondary);color:#fff}
+    .services-search{position:relative;width:min(100%,290px)}
+    .services-search i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:var(--text-secondary)}
+    .services-search input{width:100%;border:1px solid var(--border-color);background:var(--bg-card);color:var(--text-primary);border-radius:999px;padding:11px 16px 11px 42px;outline:none}
+    [dir="rtl"] .services-search i{left:auto;right:15px}
+    [dir="rtl"] .services-search input{padding-left:16px;padding-right:42px}
+    .service-item{display:flex}
+    .service-card-wrap{height:100%;width:100%}
+    .service-card{height:100%;width:100%;background:var(--bg-card);border:1px solid var(--border-color);border-radius:26px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;display:flex;flex-direction:column}
+    .service-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);border-color:rgba(255,122,89,.28)}
+    .service-card-media{height:225px;min-height:225px;position:relative;overflow:hidden;background:#eee}
+    .service-card-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,35,.04) 35%,rgba(20,18,35,.34) 100%);pointer-events:none}
+    .service-card-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+    .service-card:hover .service-card-media img{transform:scale(1.055)}
+    .service-card-tag{position:absolute;z-index:2;top:16px;left:16px;background:rgba(255,255,255,.94);color:#27233a;border-radius:999px;padding:7px 12px;font-size:.72rem;font-weight:800;letter-spacing:.01em;box-shadow:0 5px 18px rgba(0,0,0,.08)}
+    [dir="rtl"] .service-card-tag{left:auto;right:16px}
+    .service-card-icon{position:absolute;z-index:3;right:18px;bottom:-22px;width:52px;height:52px;border-radius:16px;background:var(--bg-card);color:var(--secondary);display:grid;place-items:center;box-shadow:0 10px 24px rgba(20,18,35,.12);border:1px solid var(--border-color);font-size:1.05rem}
+    [dir="rtl"] .service-card-icon{right:auto;left:18px}
+    .service-card-body{padding:32px 25px 24px;display:flex;flex-direction:column;flex:1;min-height:285px}
+    .service-card-body h3{font:800 1.48rem/1.18 var(--font-heading);color:var(--text-primary);margin:0 62px 11px 0;min-height:35px}
+    [dir="rtl"] .service-card-body h3{margin-right:0;margin-left:62px}
+    .service-card-body p{color:var(--text-secondary);line-height:1.7;font-size:.9rem;margin:0 0 18px;min-height:74px}
+    .service-features{display:flex;flex-wrap:wrap;gap:7px;min-height:54px;align-content:flex-start;margin-bottom:20px}
+    .service-feature{display:inline-flex;align-items:center;min-height:28px;padding:6px 10px;border-radius:999px;background:var(--bg-secondary);border:1px solid var(--border-color);color:var(--text-secondary);font-size:.7rem;font-weight:750;line-height:1.1}
+    .service-features{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:22px}
+    .service-feature{font-size:.72rem;font-weight:700;color:var(--text-secondary);background:var(--bg-secondary);padding:6px 9px;border-radius:8px}
+    .service-card-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+    .service-price{font:800 1.15rem var(--font-heading);color:var(--text-primary)}
+    .service-price small{font:500 .75rem var(--font-body);color:var(--text-secondary)}
+    .service-detail-link{display:inline-flex;align-items:center;gap:7px;color:var(--secondary);font-weight:800;font-size:.82rem;text-decoration:none}
+    .service-detail-link:hover{color:var(--primary)}
+    .service-empty{display:none;text-align:center;padding:45px;color:var(--text-secondary);grid-column:1/-1}
+
+    .services-process{padding:100px 0;background:var(--bg-primary)}
+    .services-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+    .process-card{padding:30px 24px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:22px;position:relative;height:100%}
+    .process-number{font:800 2.5rem/1 var(--font-heading);color:var(--secondary);opacity:.28;margin-bottom:18px}
+    .process-card h3{font:800 1.25rem var(--font-heading);color:var(--text-primary);margin-bottom:10px}
+    .process-card p{color:var(--text-secondary);line-height:1.7;font-size:.88rem;margin:0}
+
+    .services-highlight{padding:100px 0;background:var(--bg-secondary)}
+    .services-highlight-card{background:var(--gradient-secondary);border-radius:30px;overflow:hidden;color:#fff;box-shadow:var(--shadow-xl)}
+    .services-highlight-media{min-height:390px}
+    .services-highlight-media img{width:100%;height:100%;min-height:390px;object-fit:cover}
+    .services-highlight-copy{padding:55px 50px}
+    .services-highlight-copy .eyebrow{font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.8}
+    .services-highlight-copy h2{font:800 clamp(2.1rem,4vw,3.4rem)/1.08 var(--font-heading);margin:14px 0 18px}
+    .services-highlight-copy p{line-height:1.75;opacity:.9}
+    .highlight-list{list-style:none;padding:0;margin:25px 0;display:grid;gap:12px}
+    .highlight-list li{display:flex;gap:10px;align-items:flex-start;font-weight:700;font-size:.9rem}
+    .highlight-list i{margin-top:3px}
+
+    .services-cta{padding:95px 0;background:var(--bg-secondary)}
+    .services-cta-card{text-align:center;background:var(--bg-card);border:1px solid var(--border-color);border-radius:30px;padding:60px 25px;box-shadow:var(--shadow-lg)}
+    .services-cta-card h2{font:800 clamp(2.2rem,4vw,3.6rem)/1.08 var(--font-heading);color:var(--text-primary);margin:12px auto 15px;max-width:720px}
+    .services-cta-card p{color:var(--text-secondary);max-width:650px;margin:0 auto 28px;line-height:1.75}
+    .services-cta-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    @media(max-width:991px){.services-hero-grid{grid-template-columns:1fr}.services-hero-visual{min-height:430px}.services-process-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:767px){.services-hero{padding:125px 0 70px}.services-hero-visual{min-height:330px}.services-hero-photo{inset:0 22px 22px 0;border-width:5px}.services-mini-card{width:205px;padding:14px}.services-catalog,.services-process,.services-highlight{padding:75px 0}.services-process-grid{grid-template-columns:1fr}.services-highlight-copy{padding:35px 25px}.services-highlight-media,.services-highlight-media img{min-height:270px}.service-card-media{height:205px;min-height:205px}.service-card-body{min-height:0}.service-card-body h3{min-height:0}.service-card-body p{min-height:0}.service-features{min-height:0}}
+    @media(max-width:480px){.services-toolbar{align-items:stretch}.services-search{width:100%}.services-hero-actions .btn-playzone{width:100%;justify-content:center}.services-mini-card{right:-4px}}
+  </style>
+</head>
+<body class="services-page">
+<div class="preloader"><div class="preloader-spinner"></div></div>
+<!-- Same global navbar used across Home 1 and Home 2 -->
+<nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+<div class="collapse navbar-collapse" id="navbarMain">
+<button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+<li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+</ul>
+<div class="mobile-nav-actions d-lg-none"><a class="btn-login" href="parent-login.html">Login</a><a class="btn-signup" href="register.html">Sign Up</a></div>
+</div>
+<div class="navbar-actions">
+<button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+<button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+<a class="btn-login d-none d-xl-inline-flex" href="parent-login.html">Login</a>
+<a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+</div>
+</div></nav>
+<div class="mobile-menu-overlay"></div>
+<main>
+<section class="services-hero">
+<div class="container">
+<div class="services-hero-grid">
+<div>
+<span class="services-eyebrow"><i class="fas fa-wand-magic-sparkles"></i> More than just play</span>
+<h1>Experiences made for <span>little explorers.</span></h1>
+<p>From everyday open play to unforgettable birthdays, KidNest brings together active fun, creative learning and family-friendly experiences under one roof.</p>
+<div class="services-hero-actions">
+<a class="btn-playzone btn-primary-custom btn-lg-playzone" href="#serviceCatalog"><i class="fas fa-grid-2"></i> Explore Services</a>
+<a class="btn-playzone btn-outline-custom btn-lg-playzone" href="booking.html"><i class="fas fa-calendar-check"></i> Book a Session</a>
+</div>
+</div>
+<div class="services-hero-visual">
+<div class="services-hero-photo"><img alt="Children enjoying an indoor play experience" src="images/site/service-hero-img.webp"/></div>
+<div class="services-mini-card"><i class="fas fa-shield-heart"></i><strong>Safe by design</strong><span>Trained team, clean spaces and age-appropriate experiences.</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="services-catalog" id="serviceCatalog">
+<div class="container">
+<div class="services-heading">
+<span class="section-badge">Our Services</span>
+<h2>Everything families need for a great day out.</h2>
+<p>Choose an experience for today, plan something special for the weekend, or build a routine with one of our learning and membership programs.</p>
+</div>
+<div class="services-toolbar">
+<div aria-label="Filter services" class="services-filters" role="tablist">
+<button class="service-filter active" data-filter="all">All Services</button>
+<button class="service-filter" data-filter="play">Play</button>
+<button class="service-filter" data-filter="party">Parties</button>
+<button class="service-filter" data-filter="learn">Learning</button>
+<button class="service-filter" data-filter="family">Family</button>
+</div>
+<div class="services-search"><i class="fas fa-search"></i><input aria-label="Search services" id="serviceSearch" placeholder="Search services..." type="search"/></div>
+</div>
+<div class="row g-4" id="serviceGrid">
+<div class="col-md-6 col-xl-4 service-item" data-category="play" data-name="open play">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Children playing together indoors" src="images/site/service-1.webp"/><span class="service-card-tag">Play</span><span class="service-card-icon"><i class="fas fa-puzzle-piece"></i></span></div>
+<div class="service-card-body"><h3>Open Play</h3><p>Flexible play sessions across our climbing, sliding, imaginative and active play areas for children of different age groups.</p><div class="service-features"><span class="service-feature">Flexible slots</span><span class="service-feature">All-day fun</span><span class="service-feature">Age zones</span></div><div class="service-card-footer"><span class="service-price">From $12 <small>/ child</small></span><a class="service-detail-link" href="service-details.html?service=open-play">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4 service-item" data-category="party" data-name="birthday parties">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Birthday party celebration for children" src="images/site/service-5.webp"/><span class="service-card-tag">Parties</span><span class="service-card-icon"><i class="fas fa-cake-candles"></i></span></div>
+<div class="service-card-body"><h3>Birthday Parties</h3><p>Stress-free celebrations with private party space, guided activities, food options, decorations and a dedicated host.</p><div class="service-features"><span class="service-feature">Party host</span><span class="service-feature">Decor</span><span class="service-feature">Food options</span></div><div class="service-card-footer"><span class="service-price">From $249 <small>/ package</small></span><a class="service-detail-link" href="service-details.html?service=birthday-parties">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4 service-item" data-category="learn" data-name="creative workshops">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Children taking part in a creative workshop" src="images/site/creative.jpg"/><span class="service-card-tag">Learning</span><span class="service-card-icon"><i class="fas fa-palette"></i></span></div>
+<div class="service-card-body"><h3>Creative Workshops</h3><p>Hands-on art, building, science and maker activities designed to spark curiosity while kids create something they can take home.</p><div class="service-features"><span class="service-feature">STEM</span><span class="service-feature">Art</span><span class="service-feature">Small groups</span></div><div class="service-card-footer"><span class="service-price">From $18 <small>/ child</small></span><a class="service-detail-link" href="service-details.html?service=workshops">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4 service-item" data-category="learn" data-name="holiday camps">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Children participating in a holiday camp" src="images/site/playzone-5.webp"/><span class="service-card-tag">Learning</span><span class="service-card-icon"><i class="fas fa-sun"></i></span></div>
+<div class="service-card-body"><h3>Holiday Camps</h3><p>Multi-day themed programs mixing active play, creative challenges, team games and supervised downtime during school breaks.</p><div class="service-features"><span class="service-feature">Daily themes</span><span class="service-feature">Supervised</span><span class="service-feature">Team play</span></div><div class="service-card-footer"><span class="service-price">From $99 <small>/ week</small></span><a class="service-detail-link" href="service-details.html?service=holiday-camps">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4 service-item" data-category="family" data-name="family membership">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Parent and child enjoying family time" src="images/site/family.jpg"/><span class="service-card-tag">Family</span><span class="service-card-icon"><i class="fas fa-heart"></i></span></div>
+<div class="service-card-body"><h3>Family Membership</h3><p>Save on repeat visits with member pricing, bonus sessions, early access to events and exclusive family perks.</p><div class="service-features"><span class="service-feature">Member rates</span><span class="service-feature">Bonus visits</span><span class="service-feature">Early access</span></div><div class="service-card-footer"><span class="service-price">From $39 <small>/ month</small></span><a class="service-detail-link" href="service-details.html?service=membership">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="col-md-6 col-xl-4 service-item" data-category="party" data-name="private events">
+<article class="service-card service-card-wrap">
+<div class="service-card-media"><img alt="Private family event at an indoor play venue" src="images/site/service-6.webp"/><span class="service-card-tag">Parties</span><span class="service-card-icon"><i class="fas fa-champagne-glasses"></i></span></div>
+<div class="service-card-body"><h3>Private Events</h3><p>Turn the play center into your own celebration space for school groups, family gatherings, team days and special occasions.</p><div class="service-features"><span class="service-feature">Private venue</span><span class="service-feature">Custom setup</span><span class="service-feature">Group rates</span></div><div class="service-card-footer"><span class="service-price">Custom <small>/ quote</small></span><a class="service-detail-link" href="service-details.html?service=private-events">View Details <i class="fas fa-arrow-right"></i></a></div></div>
+</article>
+</div>
+<div class="service-empty" id="serviceEmpty"><i class="fas fa-face-frown fa-2x mb-3"></i><h3>No services found</h3><p>Try another search term or category.</p></div>
+</div>
+</div>
+</section>
+<section class="services-process">
+<div class="container">
+<div class="services-heading"><span class="section-badge">Simple Booking</span><h2>From choosing to playing in four easy steps.</h2><p>Our front-end booking flow is designed to make planning a visit quick and clear for parents.</p></div>
+<div class="services-process-grid">
+<div class="process-card"><div class="process-number">01</div><h3>Choose an experience</h3><p>Pick open play, a party, workshop, camp, membership or private event.</p></div>
+<div class="process-card"><div class="process-number">02</div><h3>Check availability</h3><p>Select your preferred date, age group and available time slot.</p></div>
+<div class="process-card"><div class="process-number">03</div><h3>Confirm details</h3><p>Add children, guest information and any optional extras for your visit.</p></div>
+<div class="process-card"><div class="process-number">04</div><h3>Come play</h3><p>Arrive, check in with our team and let the kids take over the fun.</p></div>
+</div>
+</div>
+</section>
+<section class="services-highlight">
+<div class="container">
+<div class="services-highlight-card row g-0 align-items-stretch">
+<div class="col-lg-6 services-highlight-media"><img alt="Families enjoying a KidNest birthday experience" src="images/user-supplied/service-most loved by families.webp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+<div class="col-lg-6 services-highlight-copy"><span class="eyebrow">Most loved by families</span><h2>Make their big day feel even bigger.</h2><p>Our birthday experience combines the excitement of KidNest with the convenience parents actually need.</p><ul class="highlight-list"><li><i class="fas fa-check-circle"></i> Dedicated party host from arrival to cake time</li><li><i class="fas fa-check-circle"></i> Age-appropriate activities and private celebration space</li><li><i class="fas fa-check-circle"></i> Flexible food, decoration and add-on options</li></ul><a class="btn-playzone btn-light-custom" href="service-details.html?service=birthday-parties">Explore Birthday Packages <i class="fas fa-arrow-right"></i></a></div>
+</div>
+</div>
+</section>
+<section class="services-cta">
+<div class="container">
+<div class="services-cta-card"><span class="section-badge">Ready to Play?</span><h2>Pick an experience and make today a KidNest day.</h2><p>Explore the services, check a time that works for your family, and get ready for a day full of movement, imagination and smiles.</p><div class="services-cta-actions"><a class="btn-playzone btn-primary-custom btn-lg-playzone" href="booking.html"><i class="fas fa-calendar-check"></i> Book a Session</a><a class="btn-playzone btn-outline-custom btn-lg-playzone" href="contact.html"><i class="fas fa-message"></i> Talk to Us</a></div></div>
+</div>
+</section>
+</main>
+<!-- Same footer structure used by the Home pages -->
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<!-- Footer Brand -->
+<div class="col-lg-4 col-md-6">
+<a class="footer-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+<a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Quick Links</h6>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="play-zones.html">Play Zones</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="pricing.html">Membership</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Services</h6>
+<ul class="footer-links">
+<li><a href="services.html">Birthday Parties</a></li>
+<li><a href="services.html">After-School</a></li>
+<li><a href="services.html">Holiday Camps</a></li>
+<li><a href="services.html">Workshops</a></li>
+<li><a href="safety.html">Safety Standards</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-lg-4 col-md-6">
+<h6 class="footer-title">Contact Us</h6>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+<span>123 Fun Street, Play City, PC 12345</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@kidsplayzone.com</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+</div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+<div class="row align-items-center">
+<div class="col-md-6">
+<p>© 2026 KidNest. All rights reserved.</p>
+</div>
+<div class="col-md-6">
+<div class="footer-bottom-links justify-content-md-end d-flex">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const filters=document.querySelectorAll('.service-filter');
+      const items=document.querySelectorAll('.service-item');
+      const search=document.getElementById('serviceSearch');
+      const empty=document.getElementById('serviceEmpty');
+      let active='all';
+      function applyFilters(){
+        const query=(search.value||'').trim().toLowerCase(); let count=0;
+        items.forEach(item=>{const matchesCategory=active==='all'||item.dataset.category===active; const matchesSearch=!query||item.dataset.name.includes(query)||item.textContent.toLowerCase().includes(query); const show=matchesCategory&&matchesSearch; item.style.display=show?'block':'none'; if(show) count++;});
+        empty.style.display=count?'none':'block';
+      }
+      filters.forEach(btn=>btn.addEventListener('click',function(){filters.forEach(b=>b.classList.remove('active'));this.classList.add('active');active=this.dataset.filter;applyFilters();}));
+      search.addEventListener('input',applyFilters);
+    });
+  </script>
+</body>
+</html>

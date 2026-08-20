@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="KidNest pricing and membership plans for indoor play, family memberships, visits, sessions, parties and kids activities." name="description"/>
+<meta content="kids play zone pricing, indoor play membership, family membership, kids play passes, KidNest pricing" name="keywords"/>
+<meta content="KidNest" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="Pricing &amp; Membership | KidNest" property="og:title"/>
+<meta content="Flexible play passes and family membership plans designed for every kind of KidNest visit." property="og:description"/>
+<meta content="website" property="og:type"/>
+<title>Pricing &amp; Membership | KidNest Indoor Play Area</title><link rel="icon" type="image/svg+xml" href="images/logo.svg">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&amp;family=Nunito:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<style>
+    .pricing-page{overflow-x:hidden;background:var(--bg-primary)}
+    .pricing-hero{padding:155px 0 95px;position:relative;overflow:hidden;background:linear-gradient(rgba(9,18,38,.58),rgba(16,24,47,.68)),url("images/banners/pricing-banner.webp") center/cover no-repeat;color:#fff}
+    .pricing-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(123,47,247,.18),transparent 45%,rgba(0,201,167,.12));pointer-events:none}
+    .pricing-hero:after{content:"";position:absolute;width:500px;height:500px;left:-260px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.11),transparent 68%);pointer-events:none}
+    .pricing-hero-content{position:relative;z-index:2;max-width:850px;margin:auto;text-align:center;color:#fff}
+    .pricing-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 17px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.84rem;font-weight:800}
+    .pricing-hero h1{font:800 clamp(2.9rem,6vw,5.3rem)/1.02 var(--font-heading);color:#fff;margin:20px 0;text-shadow:0 4px 22px rgba(0,0,0,.28)}
+    .pricing-hero h1 span{background:var(--gradient-secondary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .pricing-hero p{font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.88);max-width:700px;margin:0 auto 30px}
+    .pricing-hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+    .pricing-pill{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:1px solid var(--border-color);background:var(--bg-card);border-radius:999px;color:var(--text-secondary);font-size:.85rem;font-weight:700}
+    .pricing-plans{padding:95px 0;background:var(--bg-secondary)}
+    .pricing-heading{text-align:center;max-width:720px;margin:0 auto 40px}
+    .pricing-heading h2{font:800 clamp(2.3rem,4vw,3.5rem)/1.08 var(--font-heading);color:var(--text-primary);margin:14px 0}
+    .pricing-heading p{color:var(--text-secondary);line-height:1.75;margin:0}
+    .billing-switch{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:45px}
+    .billing-toggle{display:inline-flex;padding:5px;border:1px solid var(--border-color);background:var(--bg-card);border-radius:999px;box-shadow:var(--shadow-sm)}
+    .billing-option{border:0;background:transparent;color:var(--text-secondary);font-weight:800;padding:10px 18px;border-radius:999px;cursor:pointer}
+    .billing-option.active{background:var(--secondary);color:#fff}
+    .save-badge{background:var(--accent-light);color:var(--accent);font-size:.72rem;padding:5px 9px;border-radius:999px;font-weight:900}
+    .plan-card{height:100%;display:flex;flex-direction:column;position:relative;background:var(--bg-card);border:1px solid var(--border-color);border-radius:26px;padding:32px;box-shadow:var(--shadow-md);transition:var(--transition-normal);overflow:hidden}
+    .plan-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-xl)}
+    .plan-card.featured{border:2px solid var(--secondary);transform:translateY(-10px);box-shadow:var(--shadow-xl)}
+    .plan-card.featured:hover{transform:translateY(-14px)}
+    .plan-ribbon{position:absolute;top:18px;right:-34px;transform:rotate(38deg);background:var(--secondary);color:#fff;padding:7px 38px;font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    [dir="rtl"] .plan-ribbon{right:auto;left:-34px;transform:rotate(-38deg)}
+    .plan-icon{width:58px;height:58px;border-radius:17px;display:grid;place-items:center;background:var(--secondary-light);color:var(--secondary);font-size:1.4rem;margin-bottom:22px}
+    .plan-name{font:800 1.55rem/1.1 var(--font-heading);color:var(--text-primary);margin-bottom:8px}
+    .plan-description{color:var(--text-secondary);font-size:.9rem;line-height:1.65;min-height:50px}
+    .plan-price{display:flex;align-items:flex-end;gap:5px;margin:25px 0 8px}
+    .plan-price strong{font:800 3rem/1 var(--font-heading);color:var(--text-primary)}
+    .plan-price span{color:var(--text-secondary);font-size:.88rem;margin-bottom:5px}
+    .plan-price .old-price{text-decoration:line-through;opacity:.55;margin-left:6px}
+    .plan-note{font-size:.78rem;color:var(--accent);font-weight:800;min-height:20px}
+    .plan-divider{height:1px;background:var(--border-color);margin:24px 0}
+    .plan-features{list-style:none;padding:0;margin:0 0 28px;flex:1}
+    .plan-features li{display:flex;gap:10px;align-items:flex-start;color:var(--text-secondary);font-size:.9rem;line-height:1.5;margin-bottom:13px}
+    .plan-features i{color:var(--accent);margin-top:3px}
+    .plan-card .btn{width:100%;padding:13px 18px;border-radius:13px;font-weight:800}
+    .membership-section{padding:100px 0;background:var(--bg-primary)}
+    .membership-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .membership-visual{position:relative;min-height:500px}
+    .membership-photo{position:absolute;inset:0 45px 40px 0;border-radius:32px;overflow:hidden;box-shadow:var(--shadow-xl);border:8px solid var(--bg-card)}
+    .membership-photo img{width:100%;height:100%;object-fit:cover}
+    .membership-floating{position:absolute;right:0;bottom:0;width:260px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:22px;padding:20px;box-shadow:var(--shadow-lg)}
+    .membership-floating strong{display:block;font:800 1.5rem var(--font-heading);color:var(--text-primary)}
+    .membership-floating span{color:var(--text-secondary);font-size:.82rem}
+    .membership-content .eyebrow{display:inline-flex;padding:8px 15px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.82rem;font-weight:800}
+    .membership-content h2{font:800 clamp(2.3rem,4vw,3.5rem)/1.08 var(--font-heading);color:var(--text-primary);margin:18px 0}
+    .membership-content>p{color:var(--text-secondary);line-height:1.8}
+    .perk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+    .perk-item{display:flex;gap:12px;padding:16px;border:1px solid var(--border-color);background:var(--bg-card);border-radius:16px}
+    .perk-item i{width:40px;height:40px;border-radius:12px;background:var(--secondary-light);color:var(--secondary);display:grid;place-items:center;flex:none}
+    .perk-item strong{display:block;color:var(--text-primary);font-size:.9rem}
+    .perk-item span{display:block;color:var(--text-secondary);font-size:.78rem;margin-top:3px}
+    .benefits-section{padding:95px 0;background:var(--bg-secondary)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .benefit-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:28px;text-align:center;transition:var(--transition-normal)}
+    .benefit-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+    .benefit-icon{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--secondary-light);color:var(--secondary);margin:0 auto 16px;font-size:1.2rem}
+    .benefit-card h5{font:800 1.1rem var(--font-heading);color:var(--text-primary);margin-bottom:8px}
+    .benefit-card p{font-size:.84rem;line-height:1.65;color:var(--text-secondary);margin:0}
+    .comparison-section{padding:100px 0;background:var(--bg-primary)}
+    .comparison-wrap{background:var(--bg-card);border:1px solid var(--border-color);border-radius:25px;overflow:auto;box-shadow:var(--shadow-md)}
+    .comparison-table{min-width:760px;margin:0;color:var(--text-secondary);--bs-table-bg:transparent;--bs-table-color:var(--text-secondary);--bs-table-border-color:var(--border-color)}
+    .comparison-table > :not(caption) > * > *{background:transparent !important;color:var(--text-secondary) !important;border-color:var(--border-color) !important;box-shadow:none}
+    .comparison-table thead th{background:var(--bg-secondary) !important;color:var(--text-primary) !important;font-weight:800;padding:20px;border-bottom:1px solid var(--border-color);white-space:nowrap}
+    .comparison-table tbody td{background:transparent !important;color:var(--text-secondary) !important;padding:18px 20px;border-bottom:1px solid var(--border-color);vertical-align:middle}
+    .comparison-table tbody tr:last-child td{border-bottom:0}
+    .comparison-table .feature-name{font-weight:800;color:var(--text-primary) !important}
+    .comparison-table .check{color:var(--accent) !important;font-weight:900}
+    .comparison-table .dash{color:var(--text-muted) !important;opacity:.75}
+    [data-theme="dark"] .comparison-table tbody tr:hover td{background:var(--bg-card-hover) !important}
+    .check{color:var(--accent);font-weight:900}
+    .dash{opacity:.35}
+    .addons-section{padding:95px 0;background:var(--bg-secondary)}
+    .addon-card{height:100%;background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+    .addon-card i{width:50px;height:50px;display:grid;place-items:center;border-radius:14px;background:var(--secondary-light);color:var(--secondary);flex:none}
+    .addon-card h5{font:800 1.05rem var(--font-heading);color:var(--text-primary);margin-bottom:5px}
+    .addon-card p{font-size:.82rem;color:var(--text-secondary);margin:0 0 8px;line-height:1.6}
+    .addon-price{font-weight:900;color:var(--secondary);font-size:.9rem}
+    .pricing-cta{padding:100px 0;background:var(--gradient-secondary);position:relative;overflow:hidden}
+    .pricing-cta:before{content:"";position:absolute;width:500px;height:500px;right:-180px;top:-260px;border-radius:50%;background:rgba(255,255,255,.08)}
+    .pricing-cta-inner{text-align:center;position:relative;z-index:1;color:#fff;max-width:760px;margin:auto}
+    .pricing-cta h2{font:800 clamp(2.3rem,4vw,3.5rem)/1.1 var(--font-heading);margin-bottom:14px}
+    .pricing-cta p{opacity:.9;line-height:1.8;margin-bottom:28px}
+    .pricing-cta .btn{background:#fff;color:var(--secondary);border:0;border-radius:13px;padding:14px 25px;font-weight:900}
+    @media(max-width:991px){.plan-card.featured{transform:none}.plan-card.featured:hover{transform:translateY(-7px)}.membership-grid{grid-template-columns:1fr;gap:45px}.membership-visual{min-height:420px}.benefits-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:767px){.pricing-hero{padding:130px 0 75px}.pricing-plans,.membership-section,.benefits-section,.comparison-section,.addons-section,.pricing-cta{padding:75px 0}.billing-switch{flex-wrap:wrap}.plan-card{padding:25px}.perk-grid{grid-template-columns:1fr}.benefits-grid{grid-template-columns:1fr}.membership-visual{min-height:350px}.membership-photo{inset:0 20px 35px 0}.membership-floating{width:210px;padding:16px}.membership-floating strong{font-size:1.2rem}}
+    [dir="rtl"] .membership-photo{inset:0 0 40px 45px}.pricing-page .footer{margin-top:0}
+  </style>
+</head>
+<body>
+<div class="preloader"><div class="preloader-spinner"></div></div>
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+<div class="collapse navbar-collapse" id="navbarMain">
+<button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+<ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+<li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+<li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+</ul>
+<div class="mobile-nav-actions d-lg-none"><a class="btn-login" href="parent-login.html">Login</a><a class="btn-signup" href="register.html">Sign Up</a></div>
+</div>
+<div class="navbar-actions">
+<button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+<button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+<a class="btn-login d-none d-xl-inline-flex" href="parent-login.html">Login</a>
+<a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+</div>
+</div></nav>
+<main class="pricing-page">
+<section class="pricing-hero">
+<div class="container">
+<div class="pricing-hero-content">
+<span class="pricing-eyebrow"><i class="fas fa-tags"></i> Flexible plans for every family</span>
+<h1>Play more. Save more. <span>Choose your perfect plan.</span></h1>
+<p>From a single fun-filled visit to an all-year family membership, KidNest keeps pricing simple, transparent and packed with value.</p>
+<div class="pricing-hero-pills">
+<span class="pricing-pill"><i class="fas fa-check-circle"></i> No hidden fees</span>
+<span class="pricing-pill"><i class="fas fa-calendar-check"></i> Easy booking</span>
+<span class="pricing-pill"><i class="fas fa-users"></i> Family-friendly</span>
+</div>
+</div>
+</div>
+</section>
+<section class="pricing-plans" id="plans">
+<div class="container">
+<div class="pricing-heading">
+<span class="pricing-eyebrow">Play passes &amp; memberships</span>
+<h2>Plans built around <span style="color:var(--secondary)">your routine</span></h2>
+<p>Pick a simple visit pass or upgrade to a membership when your little explorer is ready for more regular adventures.</p>
+</div>
+<div class="billing-switch">
+<div aria-label="Billing frequency" class="billing-toggle" role="tablist">
+<button class="billing-option active" data-billing="monthly">Monthly</button>
+<button class="billing-option" data-billing="yearly">Yearly</button>
+</div>
+<span class="save-badge">Save up to 20%</span>
+</div>
+<div class="row g-4 align-items-stretch">
+<div class="col-lg-4">
+<article class="plan-card">
+<div class="plan-icon"><i class="fas fa-ticket"></i></div>
+<div class="plan-name">Day Pass</div>
+<div class="plan-description">Perfect for occasional visits, first-timers and spontaneous play days.</div>
+<div class="plan-price"><strong>$18</strong><span>/ child</span></div>
+<div class="plan-note">Includes 2.5 hours of open play</div>
+<div class="plan-divider"></div>
+<ul class="plan-features">
+<li><i class="fas fa-check"></i> Access to age-appropriate play zones</li>
+<li><i class="fas fa-check"></i> Free Wi-Fi for parents</li>
+<li><i class="fas fa-check"></i> Complimentary grip socks</li>
+<li><i class="fas fa-check"></i> Re-entry on the same day</li>
+</ul>
+<a class="btn btn-outline-primary" href="register.html">Choose Day Pass</a>
+</article>
+</div>
+<div class="col-lg-4">
+<article class="plan-card featured">
+<span class="plan-ribbon">Most Popular</span>
+<div class="plan-icon"><i class="fas fa-star"></i></div>
+<div class="plan-name">Explorer</div>
+<div class="plan-description">Our balanced membership for families who visit regularly throughout the month.</div>
+<div class="plan-price" data-monthly-price="$39" data-yearly-price="$31"><strong>$39</strong><span>/ month</span></div>
+<div class="plan-note">2 children included · Cancel anytime</div>
+<div class="plan-divider"></div>
+<ul class="plan-features">
+<li><i class="fas fa-check"></i> 8 play sessions every month</li>
+<li><i class="fas fa-check"></i> 10% off birthday packages</li>
+<li><i class="fas fa-check"></i> Priority weekend booking</li>
+<li><i class="fas fa-check"></i> 1 guest pass each month</li>
+<li><i class="fas fa-check"></i> Member-only workshop pricing</li>
+</ul>
+<a class="btn btn-primary" href="register.html">Start Explorer Membership</a>
+</article>
+</div>
+<div class="col-lg-4">
+<article class="plan-card">
+<div class="plan-icon"><i class="fas fa-crown"></i></div>
+<div class="plan-name">Adventure Plus</div>
+<div class="plan-description">For frequent visitors who want maximum flexibility, savings and family perks.</div>
+<div class="plan-price" data-monthly-price="$69" data-yearly-price="$55"><strong>$69</strong><span>/ month</span></div>
+<div class="plan-note">Up to 4 children included</div>
+<div class="plan-divider"></div>
+<ul class="plan-features">
+<li><i class="fas fa-check"></i> Unlimited weekday play</li>
+<li><i class="fas fa-check"></i> 12 weekend sessions each month</li>
+<li><i class="fas fa-check"></i> 15% off birthday packages</li>
+<li><i class="fas fa-check"></i> 2 guest passes every month</li>
+<li><i class="fas fa-check"></i> Free monthly creative workshop</li>
+</ul>
+<a class="btn btn-outline-primary" href="register.html">Choose Adventure Plus</a>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="membership-section" id="membership">
+<div class="container">
+<div class="membership-grid">
+<div class="membership-visual">
+<div class="membership-photo"><img alt="Children enjoying an indoor play area" loading="lazy" src="images/site/birthday-room.jpg"/></div>
+<div class="membership-floating"><strong>Member perks that matter</strong><span>More play, easier bookings and better value on the experiences families use most.</span></div>
+</div>
+<div class="membership-content">
+<span class="eyebrow"><i class="fas fa-heart me-1"></i> KidNest Membership</span>
+<h2>Turn regular visits into a <span style="color:var(--secondary)">family tradition.</span></h2>
+<p>Membership is more than a discount. It gives families a simpler way to plan playtime, access exclusive experiences and keep children moving, creating and connecting all year.</p>
+<div class="perk-grid">
+<div class="perk-item"><i class="fas fa-calendar-check"></i><div><strong>Flexible bookings</strong><span>Reserve popular sessions faster.</span></div></div>
+<div class="perk-item"><i class="fas fa-percent"></i><div><strong>Member savings</strong><span>Discounts on parties and workshops.</span></div></div>
+<div class="perk-item"><i class="fas fa-user-group"></i><div><strong>Guest privileges</strong><span>Bring friends for special visits.</span></div></div>
+<div class="perk-item"><i class="fas fa-gift"></i><div><strong>Birthday extras</strong><span>Extra value when celebrations arrive.</span></div></div>
+</div>
+<a class="btn btn-primary mt-4" href="#plans">Compare Memberships</a>
+</div>
+</div>
+</div>
+</section>
+<section class="benefits-section">
+<div class="container">
+<div class="pricing-heading">
+<span class="pricing-eyebrow">Why families join</span>
+<h2>One membership. <span style="color:var(--secondary)">More reasons to play.</span></h2>
+<p>Every plan is designed around the things parents actually value: convenience, savings, variety and peace of mind.</p>
+</div>
+<div class="benefits-grid">
+<div class="benefit-card"><div class="benefit-icon"><i class="fas fa-bolt"></i></div><h5>Priority Access</h5><p>Get earlier access to busy sessions, workshops and selected events.</p></div>
+<div class="benefit-card"><div class="benefit-icon"><i class="fas fa-wallet"></i></div><h5>Better Value</h5><p>Enjoy member-only rates on parties, workshops and selected add-ons.</p></div>
+<div class="benefit-card"><div class="benefit-icon"><i class="fas fa-people-group"></i></div><h5>Family Friendly</h5><p>Choose plans that cover multiple children without complicated pricing.</p></div>
+<div class="benefit-card"><div class="benefit-icon"><i class="fas fa-shield-heart"></i></div><h5>Safe &amp; Trusted</h5><p>Play in a professionally maintained environment built around child safety.</p></div>
+</div>
+</div>
+</section>
+<section class="comparison-section" id="compare">
+<div class="container">
+<div class="pricing-heading">
+<span class="pricing-eyebrow">Plan comparison</span>
+<h2>See what each plan <span style="color:var(--secondary)">includes</span></h2>
+<p>A quick side-by-side view makes it easier to choose the right membership for your family.</p>
+</div>
+<div class="comparison-wrap">
+<table class="table comparison-table">
+<thead><tr><th>Membership benefit</th><th>Day Pass</th><th>Explorer</th><th>Adventure Plus</th></tr></thead>
+<tbody>
+<tr><td class="feature-name">Open play access</td><td>2.5 hours</td><td>8 sessions / month</td><td>Unlimited weekdays</td></tr>
+<tr><td class="feature-name">Children included</td><td>1</td><td>2</td><td>Up to 4</td></tr>
+<tr><td class="feature-name">Guest passes</td><td class="dash">—</td><td class="check">1 / month</td><td class="check">2 / month</td></tr>
+<tr><td class="feature-name">Birthday discount</td><td class="dash">—</td><td class="check">10%</td><td class="check">15%</td></tr>
+<tr><td class="feature-name">Workshop access</td><td>Standard rate</td><td>Member rate</td><td class="check">1 free / month</td></tr>
+<tr><td class="feature-name">Priority booking</td><td class="dash">—</td><td class="check">Yes</td><td class="check">Yes + priority</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="addons-section">
+<div class="container">
+<div class="pricing-heading">
+<span class="pricing-eyebrow">Flexible add-ons</span>
+<h2>Make every visit <span style="color:var(--secondary)">even better</span></h2>
+<p>Add the extras you need without changing your core membership.</p>
+</div>
+<div class="row g-4">
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-user-plus"></i><div><h5>Extra Child</h5><p>Add another child to an Explorer or Adventure Plus membership.</p><span class="addon-price">+$12 / month</span></div></div></div>
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-ticket-simple"></i><div><h5>Guest Pass</h5><p>Bring a friend for a one-time play session when your regular passes are used.</p><span class="addon-price">$15 / guest</span></div></div></div>
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-palette"></i><div><h5>Creative Workshop</h5><p>Reserve a place in a selected art, STEM or sensory workshop.</p><span class="addon-price">From $10 / session</span></div></div></div>
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-cake-candles"></i><div><h5>Birthday Upgrade</h5><p>Add themed décor, a private host or extra party time to your package.</p><span class="addon-price">From $45</span></div></div></div>
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-socks"></i><div><h5>Grip Socks</h5><p>Fresh non-slip socks for children and grown-up play companions.</p><span class="addon-price">$3 / pair</span></div></div></div>
+<div class="col-lg-4"><div class="addon-card"><i class="fas fa-mug-hot"></i><div><h5>Parent Lounge</h5><p>Upgrade your visit with premium lounge seating and complimentary refreshments.</p><span class="addon-price">$6 / visit</span></div></div></div>
+</div>
+</div>
+</section>
+<section class="pricing-cta">
+<div class="container"><div class="pricing-cta-inner">
+<h2>Ready for your next play day?</h2>
+<p>Create your family account, choose a plan and start booking sessions in minutes. You can always upgrade when your play routine grows.</p>
+<a class="btn" href="register.html">Create Family Account <i class="fas fa-arrow-right ms-2"></i></a>
+</div></div>
+</section>
+</main>
+<!-- ===== Footer ===== -->
+<footer class="footer" id="contact">
+<div class="container">
+<div class="row g-5">
+<!-- Footer Brand -->
+<div class="col-lg-4 col-md-6">
+<a class="footer-brand" href="index.html">
+<img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg"/>
+<img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;"/>
+</a>
+<p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+<a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+<a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+<a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Quick Links</h6>
+<ul class="footer-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="play-zones.html">Play Zones</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="pricing.html">Pricing</a></li>
+<li><a href="pricing.html">Membership</a></li>
+</ul>
+</div>
+<!-- Services -->
+<div class="col-lg-2 col-md-6">
+<h6 class="footer-title">Services</h6>
+<ul class="footer-links">
+<li><a href="services.html">Birthday Parties</a></li>
+<li><a href="services.html">After-School</a></li>
+<li><a href="services.html">Holiday Camps</a></li>
+<li><a href="services.html">Workshops</a></li>
+<li><a href="safety.html">Safety Standards</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-lg-4 col-md-6">
+<h6 class="footer-title">Contact Us</h6>
+<div class="footer-contact-item">
+<i class="fas fa-location-dot"></i>
+<span>123 Fun Street, Play City, PC 12345</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-phone"></i>
+<span>+1 (555) 123-4567</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-envelope"></i>
+<span>hello@kidsplayzone.com</span>
+</div>
+<div class="footer-contact-item">
+<i class="fas fa-clock"></i>
+<span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+</div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="footer-bottom">
+<div class="row align-items-center">
+<div class="col-md-6">
+<p>© 2026 KidNest. All rights reserved.</p>
+</div>
+<div class="col-md-6">
+<div class="footer-bottom-links justify-content-md-end d-flex">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- ===== Back to Top ===== -->
+<script>
+(function(){
+  const options=document.querySelectorAll('.billing-option');
+  const prices=document.querySelectorAll('[data-monthly-price]');
+  options.forEach(btn=>btn.addEventListener('click',()=>{
+    options.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+    const billing=btn.dataset.billing;
+    prices.forEach(el=>{
+      const value=billing==='yearly'?el.dataset.yearlyPrice:el.dataset.monthlyPrice;
+      const strong=el.querySelector('strong'); const suffix=el.querySelector('span');
+      strong.textContent=value; suffix.textContent=billing==='yearly'?'/ month, billed yearly':'/ month';
+    });
+  }));
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
