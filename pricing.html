@@ -24,10 +24,12 @@
     .pricing-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(123,47,247,.18),transparent 45%,rgba(0,201,167,.12));pointer-events:none}
     .pricing-hero:after{content:"";position:absolute;width:500px;height:500px;left:-260px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.11),transparent 68%);pointer-events:none}
     .pricing-hero-content{position:relative;z-index:2;max-width:850px;margin:auto;text-align:center;color:#fff}
-    .pricing-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 17px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.84rem;font-weight:800}
-    .pricing-hero h1{font:800 clamp(2.9rem,6vw,5.3rem)/1.02 var(--font-heading);color:#fff;margin:20px 0;text-shadow:0 4px 22px rgba(0,0,0,.28)}
+    .pricing-hero .pricing-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;background:rgba(255,255,255,0.18);backdrop-filter:blur(10px);color:#ffffff;border:1px solid rgba(255,255,255,0.35);font-size:.86rem;font-weight:600;box-shadow:0 4px 15px rgba(0,0,0,0.2)}
+    .pricing-hero .pricing-eyebrow i{color:#FFD93D}
+    .pricing-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 17px;border-radius:999px;background:var(--secondary-light);color:var(--secondary);font-size:.84rem;font-weight:600}
+    .pricing-hero h1{font:600 clamp(2.9rem,6vw,5.3rem)/1.02 var(--font-heading);color:#fff;margin:20px 0;text-shadow:0 4px 22px rgba(0,0,0,.28)}
     .pricing-hero h1 span{background:var(--gradient-secondary);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    .pricing-hero p{font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.88);max-width:700px;margin:0 auto 30px}
+    .pricing-hero p{font-size:1.1rem;line-height:1.8;color:rgba(255,255,255,.88);max-width:700px;margin:0 auto 30px;font-weight:500}
     .pricing-hero-pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
     .pricing-pill{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border:1px solid var(--border-color);background:var(--bg-card);border-radius:999px;color:var(--text-secondary);font-size:.85rem;font-weight:700}
     .pricing-plans{padding:95px 0;background:var(--bg-secondary)}
@@ -125,11 +127,12 @@
 <button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
 <li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
-<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html">Home 2 - Modern/Niche</a></li></ul></li>
 <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
 <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
 <li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
-<li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link active" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="parent-dashboard.html"><i class="fas fa-gauge me-1 d-lg-none"></i>Dashboard</a></li>
 <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
 </ul>

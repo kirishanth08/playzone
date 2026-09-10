@@ -24,9 +24,9 @@
     .home2-hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,0.06) 0%,transparent 70%);pointer-events:none}
     .home2-hero-content{position:relative;z-index:2}
     .home2-hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--secondary-light);color:var(--secondary);padding:8px 20px;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:24px}
-    .home2-hero-title{font-family:var(--font-heading);font-size:3.5rem;font-weight:800;line-height:1.2;color:var(--text-primary);margin-bottom:20px}
+    .home2-hero-title{font-family:var(--font-heading);font-size:3.5rem;font-weight:600;line-height:1.2;color:var(--text-primary);margin-bottom:20px}
     .home2-hero-title .highlight{background:var(--gradient-secondary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .home2-hero-description{font-size:1.15rem;color:var(--text-secondary);line-height:1.7;margin-bottom:32px;max-width:520px}
+    .home2-hero-description{font-size:1.15rem;color:var(--text-secondary);line-height:1.7;margin-bottom:32px;max-width:520px;font-weight:500}
     .home2-hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
     .home2-feature-pills{display:flex;gap:12px;flex-wrap:wrap}
     .home2-feature-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:50px;font-size:0.9rem;font-weight:600;color:var(--text-primary);box-shadow:var(--shadow-sm);transition:var(--transition-normal)}
@@ -35,15 +35,58 @@
     .home2-hero-image img{border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);width:100%;height:auto;object-fit:cover}
     .home2-hero-image-badge{position:absolute;bottom:-20px;right:30px;background:var(--gradient-secondary);color:#fff;padding:16px 24px;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;z-index:3}
     .home2-hero-image-badge i{font-size:1.5rem}
-    .home2-hero-image-badge .badge-text h6{margin:0;font-weight:700;font-size:0.95rem}
-    .home2-hero-image-badge .badge-text p{margin:0;font-size:0.8rem;opacity:0.9}
+    .home2-hero-image-badge .badge-text h6{margin:0;font-weight:600;font-size:0.95rem}
+    .home2-hero-image-badge .badge-text p{margin:0;font-size:0.8rem;opacity:0.9;font-weight:500}
     .home2-stats-bar{background:var(--gradient-secondary);padding:50px 0;position:relative;overflow:hidden}
     .home2-stats-bar::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,0.05)}
     .home2-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center;position:relative;z-index:2}
     .home2-stat-item{color:#fff}
     .home2-stat-icon{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.4rem}
-    .home2-stat-number{font-family:var(--font-heading);font-size:2.5rem;font-weight:800;line-height:1}
-    .home2-stat-label{font-size:0.95rem;opacity:0.9;margin-top:6px}
+    .home2-stat-number{font-family:var(--font-heading);font-size:2.5rem;font-weight:600;line-height:1}
+    .home2-stat-label{font-size:0.95rem;opacity:0.9;margin-top:6px;font-weight:500}
+
+    /* Home 2 Play Area Cards */
+    .home2-zone-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);overflow:hidden;height:100%;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:all var(--transition-normal)}
+    .home2-zone-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl);border-color:var(--secondary)}
+    .home2-zone-img{height:220px;position:relative;overflow:hidden}
+    .home2-zone-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .home2-zone-card:hover .home2-zone-img img{transform:scale(1.08)}
+    .home2-zone-tag{position:absolute;top:14px;left:14px;background:rgba(15,17,25,0.8);backdrop-filter:blur(8px);color:#fff;padding:6px 14px;border-radius:50px;font-size:0.75rem;font-weight:700;letter-spacing:0.5px}
+    .home2-zone-badge{position:absolute;top:14px;right:14px;background:var(--gradient-secondary);color:#fff;padding:6px 14px;border-radius:50px;font-size:0.75rem;font-weight:700}
+    .home2-zone-body{padding:26px;display:flex;flex-direction:column;flex-grow:1}
+    .home2-zone-body h4{font-size:1.3rem;font-weight:600;margin-bottom:8px}
+    .home2-zone-body p{font-size:0.92rem;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;font-weight:500}
+    .home2-activity-list{list-style:none;padding:0;margin:0 0 20px 0;display:flex;flex-direction:column;gap:8px;flex-grow:1}
+    .home2-activity-list li{display:flex;align-items:center;gap:10px;font-size:0.85rem;font-weight:550;color:var(--text-primary)}
+    .home2-activity-list li i{color:var(--accent);font-size:0.9rem}
+    .home2-zone-footer{border-top:1px solid var(--border-light);padding-top:16px;display:flex;align-items:center;justify-content:space-between;margin-top:auto}
+
+    /* Facilities Section */
+    .home2-facility-card{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-lg);padding:24px;height:100%;transition:all var(--transition-normal);display:flex;gap:16px;align-items:flex-start}
+    .home2-facility-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+    .home2-facility-icon{width:50px;height:50px;border-radius:14px;background:var(--primary-light);color:var(--primary);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+    .home2-facility-info h5{font-size:1.15rem;font-weight:600;margin-bottom:6px}
+    .home2-facility-info p{font-size:0.88rem;color:var(--text-secondary);line-height:1.55;margin:0;font-weight:500}
+
+    /* Safety & Hygiene Section */
+    .home2-safety-box{background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:40px;box-shadow:var(--shadow-lg)}
+    .home2-safety-card{background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-md);padding:22px;height:100%;transition:all var(--transition-fast)}
+    .home2-safety-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .home2-safety-icon{width:46px;height:46px;border-radius:12px;background:var(--accent-light);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:14px}
+    .home2-safety-card h6{font-size:1.05rem;font-weight:600;margin-bottom:6px}
+    .home2-safety-card p{font-size:0.85rem;color:var(--text-secondary);margin:0;line-height:1.5;font-weight:500}
+
+    /* Packages Section */
+    .home2-package-card{background:var(--bg-card);border:2px solid var(--border-color);border-radius:var(--radius-2xl);padding:36px 28px;height:100%;display:flex;flex-direction:column;position:relative;transition:all var(--transition-normal);box-shadow:var(--shadow-sm)}
+    .home2-package-card.featured{border-color:var(--primary);box-shadow:var(--shadow-xl);transform:scale(1.02)}
+    .home2-package-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-xl)}
+    .home2-package-card.featured:hover{transform:translateY(-8px) scale(1.02)}
+    .home2-package-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gradient-primary);color:#fff;padding:5px 20px;border-radius:50px;font-size:0.75rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase}
+    .home2-package-price{font-family:var(--font-heading);font-size:2.4rem;font-weight:600;color:var(--text-primary);margin:16px 0;display:flex;align-items:baseline;gap:6px}
+    .home2-package-price small{font-family:var(--font-body);font-size:0.9rem;color:var(--text-secondary);font-weight:500}
+    .home2-package-features{list-style:none;padding:0;margin:0 0 26px 0;display:flex;flex-direction:column;gap:12px;flex-grow:1}
+    .home2-package-features li{display:flex;align-items:center;gap:10px;font-size:0.9rem;color:var(--text-secondary);font-weight:500}
+    .home2-package-features li i{color:var(--primary);font-size:0.88rem}
   </style>
 </head>
 <body>
@@ -59,11 +102,12 @@
 <button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
 <li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
-<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
+<ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1 - General Play</a></li><li><a class="dropdown-item active" href="home2.html">Home 2 - Modern/Niche</a></li></ul></li>
 <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
 <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
 <li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
 <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="parent-dashboard.html"><i class="fas fa-gauge me-1 d-lg-none"></i>Dashboard</a></li>
 <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
 </ul>
@@ -150,6 +194,91 @@
 <div class="home2-stat-icon"><i class="fas fa-users"></i></div>
 <div class="home2-stat-number">5K+</div>
 <div class="home2-stat-label">Monthly Visitors</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Kids Play Areas & Activities by Age Group ===== -->
+<section class="section-padding" id="play-areas">
+<div class="container">
+<div class="text-center mb-5 animate-on-scroll">
+<span class="section-badge badge-secondary"><i class="fas fa-gamepad"></i> Play Areas &amp; Age Groups</span>
+<h2 class="section-title">Designed for Every <span class="gradient-text-alt">Stage of Wonder</span></h2>
+<p class="section-subtitle mx-auto">Explore our dedicated, secure play zones carefully customized for every age milestone and energy level.</p>
+</div>
+<div class="row g-4">
+<!-- Zone 1: Ages 0-3 -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-1">
+<div class="home2-zone-card">
+<div class="home2-zone-img">
+<img alt="Toddler Haven - Safe soft play for ages 0-3" src="images/site/play-toddler.jpg" loading="lazy"/>
+<span class="home2-zone-tag"><i class="fas fa-baby me-1"></i> Ages 0 - 3</span>
+<span class="home2-zone-badge">Soft Play</span>
+</div>
+<div class="home2-zone-body">
+<h4>Toddler Haven &amp; Sensory Cove</h4>
+<p>A gentle, padded sanctuary crafted for infants and toddlers with sensory discovery walls, soft rolling foam hills, and safe baby ball pits.</p>
+<ul class="home2-activity-list">
+<li><i class="fas fa-check-circle"></i> Low-incline gentle slides &amp; ball pond</li>
+<li><i class="fas fa-check-circle"></i> Tactile sensory panels &amp; musical pads</li>
+<li><i class="fas fa-check-circle"></i> Dedicated parent-toddler bonding space</li>
+<li><i class="fas fa-check-circle"></i> 100% soft-edged anti-microbial equipment</li>
+</ul>
+<div class="home2-zone-footer">
+<span class="fw-bold" style="color:var(--secondary)">From $12 <small class="text-muted fw-normal">/ session</small></span>
+<a href="booking.html" class="btn-playzone btn-primary-custom" style="padding:8px 18px;font-size:0.85rem;">Book Zone</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Zone 2: Ages 4-7 -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-2">
+<div class="home2-zone-card">
+<div class="home2-zone-img">
+<img alt="Junior Explorers Jungle climbing zone for ages 4-7" src="images/jungle-climber1.webp" loading="lazy"/>
+<span class="home2-zone-tag"><i class="fas fa-child me-1"></i> Ages 4 - 7</span>
+<span class="home2-zone-badge">Most Popular</span>
+</div>
+<div class="home2-zone-body">
+<h4>Junior Explorers Jungle</h4>
+<p>A thrilling multi-level indoor jungle gym with rope bridges, spiral slides, rainbow tunnels, and interactive digital game projections.</p>
+<ul class="home2-activity-list">
+<li><i class="fas fa-check-circle"></i> 3-tier climbing maze &amp; rope bridges</li>
+<li><i class="fas fa-check-circle"></i> Dual racing slides &amp; spiral tunnel</li>
+<li><i class="fas fa-check-circle"></i> Interactive digital wall target games</li>
+<li><i class="fas fa-check-circle"></i> Giant magnetic lego construction zone</li>
+</ul>
+<div class="home2-zone-footer">
+<span class="fw-bold" style="color:var(--secondary)">From $16 <small class="text-muted fw-normal">/ session</small></span>
+<a href="booking.html" class="btn-playzone btn-primary-custom" style="padding:8px 18px;font-size:0.85rem;">Book Zone</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Zone 3: Ages 8-12 -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-3">
+<div class="home2-zone-card">
+<div class="home2-zone-img">
+<img alt="Hero Action and Ninja Trampoline Arena for ages 8-12" src="images/user-supplied/home1-tech.webp" loading="lazy"/>
+<span class="home2-zone-tag"><i class="fas fa-person-running me-1"></i> Ages 8 - 12</span>
+<span class="home2-zone-badge">High Adventure</span>
+</div>
+<div class="home2-zone-body">
+<h4>Hero Action &amp; Ninja Arena</h4>
+<p>High-energy challenges featuring Olympic-grade mini-trampolines, timed ninja warrior obstacle courses, foam pit drops, and VR gaming corners.</p>
+<ul class="home2-activity-list">
+<li><i class="fas fa-check-circle"></i> High-fly mini trampoline arena &amp; foam pit</li>
+<li><i class="fas fa-check-circle"></i> Timed Ninja Warrior obstacle course</li>
+<li><i class="fas fa-check-circle"></i> Interactive VR and coding game stations</li>
+<li><i class="fas fa-check-circle"></i> Warped wall challenge &amp; balance beams</li>
+</ul>
+<div class="home2-zone-footer">
+<span class="fw-bold" style="color:var(--secondary)">From $20 <small class="text-muted fw-normal">/ session</small></span>
+<a href="booking.html" class="btn-playzone btn-primary-custom" style="padding:8px 18px;font-size:0.85rem;">Book Zone</a>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -263,6 +392,196 @@
 </div>
 </div>
 </section>
+
+<!-- ===== Facilities & Amenities Section ===== -->
+<section class="section-padding bg-secondary" id="facilities">
+<div class="container">
+<div class="text-center mb-5 animate-on-scroll">
+<span class="section-badge badge-secondary"><i class="fas fa-couch"></i> Comfort &amp; Convenience</span>
+<h2 class="section-title">World-Class Facilities for <span class="gradient-text-alt">The Entire Family</span></h2>
+<p class="section-subtitle mx-auto">We designed KidNest with parents in mind. Relax, work, or celebrate while your children play safely.</p>
+</div>
+<div class="row g-4">
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-1">
+<div class="home2-facility-card">
+<div class="home2-facility-icon"><i class="fas fa-mug-hot"></i></div>
+<div class="home2-facility-info">
+<h5>Parents' Cafe &amp; Lounge</h5>
+<p>Artisan coffee, fresh organic smoothies, nutritious snacks, and comfortable lounge seating with direct views of all play zones.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-2">
+<div class="home2-facility-icon" style="display:none"></div>
+<div class="home2-facility-card">
+<div class="home2-facility-icon" style="background:var(--secondary-light);color:var(--secondary);"><i class="fas fa-wifi"></i></div>
+<div class="home2-facility-info">
+<h5>Free High-Speed Wi-Fi &amp; Work Pods</h5>
+<p>Quiet workstations equipped with device charging ports and gigabit internet so parents can catch up on work stress-free.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-3">
+<div class="home2-facility-card">
+<div class="home2-facility-icon" style="background:var(--accent-light);color:var(--accent);"><i class="fas fa-baby-carriage"></i></div>
+<div class="home2-facility-info">
+<h5>Nursing &amp; Baby Care Rooms</h5>
+<p>Private, tranquil nursing suites with plush armchairs, baby changing stations, toddler-sized sinks, and complimentary organic amenities.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-1">
+<div class="home2-facility-card">
+<div class="home2-facility-icon" style="background:rgba(255,107,157,0.12);color:var(--pink);"><i class="fas fa-lock"></i></div>
+<div class="home2-facility-info">
+<h5>Keyless Digital Lockers &amp; Shoe Cubbies</h5>
+<p>Spacious, PIN-activated lockers for shoes, jackets, and bags to keep your family's personal belongings safe and organized.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-2">
+<div class="home2-facility-card">
+<div class="home2-facility-icon" style="background:rgba(255,195,18,0.12);color:var(--yellow);"><i class="fas fa-cake-candles"></i></div>
+<div class="home2-facility-info">
+<h5>Private Themed Party Suites</h5>
+<p>Acoustically treated celebration rooms equipped with smart lighting, sound systems, and dedicated party hosts for birthdays.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-3">
+<div class="home2-facility-card">
+<div class="home2-facility-icon" style="background:rgba(59,130,246,0.12);color:var(--blue);"><i class="fas fa-square-parking"></i></div>
+<div class="home2-facility-info">
+<h5>Complimentary On-Site Parking</h5>
+<p>Ample free parking bays located steps from our entrance, with wide stroller ramps and direct indoor access.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Safety & Hygiene Standards Section ===== -->
+<section class="section-padding" id="safety-standards">
+<div class="container">
+<div class="home2-safety-box">
+<div class="row align-items-center g-5">
+<div class="col-lg-5 animate-on-scroll">
+<span class="section-badge badge-primary"><i class="fas fa-shield-halved"></i> Safety &amp; Hygiene</span>
+<h2 class="section-title mt-2 mb-3">Our 100% Commitment to <span class="gradient-text">Safe Play</span></h2>
+<p class="text-muted mb-4">We maintain the highest safety and cleanliness protocols in the indoor amusement industry so you can relax with total peace of mind.</p>
+<div class="d-flex align-items-center gap-3 p-3 rounded-4 mb-3" style="background:var(--bg-secondary);border:1px solid var(--border-color);">
+<div class="d-flex align-items-center justify-content-center rounded-circle" style="width:48px;height:48px;background:var(--accent-light);color:var(--accent);font-size:1.3rem;flex-shrink:0;">
+<i class="fas fa-award"></i>
+</div>
+<div>
+<h6 class="mb-1 fw-bold">Certified Child-Safe Facility</h6>
+<p class="small text-muted mb-0">Inspected and certified compliant with ASTM &amp; EN-1176 playground standards.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-7 animate-on-scroll delay-2">
+<div class="row g-3">
+<div class="col-sm-6">
+<div class="home2-safety-card">
+<div class="home2-safety-icon"><i class="fas fa-user-nurse"></i></div>
+<h6>CPR &amp; First-Aid Certified Staff</h6>
+<p>Every floor monitor is certified in pediatric first aid, emergency response, and vigilant child supervision.</p>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="home2-safety-card">
+<div class="home2-safety-icon" style="background:var(--secondary-light);color:var(--secondary);"><i class="fas fa-virus-slash"></i></div>
+<h6>Nightly Hospital-Grade Sanitization</h6>
+<p>Every surface, ball pit ball, and slide is deep-cleaned nightly using certified eco-friendly UV-C and antimicrobial mists.</p>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="home2-safety-card">
+<div class="home2-safety-icon" style="background:var(--primary-light);color:var(--primary);"><i class="fas fa-id-badge"></i></div>
+<h6>Smart RFID Wristband Tracking</h6>
+<p>Parents and children receive matching secure RFID wristbands. No child can leave the gates without verified parent matching.</p>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="home2-safety-card">
+<div class="home2-safety-icon" style="background:rgba(255,195,18,0.12);color:var(--yellow);"><i class="fas fa-layer-group"></i></div>
+<h6>High-Density Impact Foam Flooring</h6>
+<p>Multi-layered shock-absorbing antibacterial padding protects against bumps and slips across all activity zones.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== Packages & Key Experiences Section ===== -->
+<section class="section-padding bg-secondary" id="packages">
+<div class="container">
+<div class="text-center mb-5 animate-on-scroll">
+<span class="section-badge badge-secondary"><i class="fas fa-ticket"></i> Packages &amp; Experiences</span>
+<h2 class="section-title">Transparent Packages for <span class="gradient-text-alt">Every Occasion</span></h2>
+<p class="section-subtitle mx-auto">Whether you're visiting for an hour or looking for unlimited monthly play, we have the ideal option.</p>
+</div>
+<div class="row g-4 align-items-stretch">
+<!-- Package 1: Drop & Play -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-1">
+<div class="home2-package-card">
+<h5 class="fw-bold mb-1">Open Play Pass</h5>
+<p class="text-muted small">Perfect for spontaneous playdates and weekend visits.</p>
+<div class="home2-package-price">
+$18 <small>/ 2-hour pass</small>
+</div>
+<ul class="home2-package-features">
+<li><i class="fas fa-check-circle"></i> Access to all age-appropriate play zones</li>
+<li><i class="fas fa-check-circle"></i> Free admission for 1 accompanying adult</li>
+<li><i class="fas fa-check-circle"></i> Free digital locker &amp; Wi-Fi access</li>
+<li><i class="fas fa-check-circle"></i> RFID safety wristband included</li>
+</ul>
+<a href="booking.html" class="btn-playzone btn-outline-custom w-100 justify-content-center">Book Open Play</a>
+</div>
+</div>
+<!-- Package 2: Birthday Blast -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-2">
+<div class="home2-package-card featured">
+<span class="home2-package-badge">Most Popular</span>
+<h5 class="fw-bold mb-1">All-Inclusive Birthday Bash</h5>
+<p class="text-muted small">A stress-free, unforgettable party experience for up to 15 kids.</p>
+<div class="home2-package-price" style="color:var(--primary)">
+$249 <small>/ 2.5 hrs party</small>
+</div>
+<ul class="home2-package-features">
+<li><i class="fas fa-check-circle"></i> Private themed party suite &amp; custom decor</li>
+<li><i class="fas fa-check-circle"></i> Dedicated party host from start to finish</li>
+<li><i class="fas fa-check-circle"></i> Pizza, organic juice boxes, &amp; cupcakes</li>
+<li><i class="fas fa-check-circle"></i> Unlimited play for all guests after party</li>
+<li><i class="fas fa-check-circle"></i> Free return pass for birthday child</li>
+</ul>
+<a href="booking.html" class="btn-playzone btn-primary-custom w-100 justify-content-center">Book Party Suite</a>
+</div>
+</div>
+<!-- Package 3: VIP Membership -->
+<div class="col-lg-4 col-md-6 animate-on-scroll delay-3">
+<div class="home2-package-card">
+<h5 class="fw-bold mb-1">VIP Unlimited Play Club</h5>
+<p class="text-muted small">Best value for regular visitors and active families.</p>
+<div class="home2-package-price">
+$49 <small>/ month</small>
+</div>
+<ul class="home2-package-features">
+<li><i class="fas fa-check-circle"></i> Unlimited drop-in play 7 days a week</li>
+<li><i class="fas fa-check-circle"></i> 15% off birthday packages &amp; cafe orders</li>
+<li><i class="fas fa-check-circle"></i> 2 free guest passes every month</li>
+<li><i class="fas fa-check-circle"></i> Priority booking for workshops &amp; camps</li>
+</ul>
+<a href="pricing.html" class="btn-playzone btn-outline-custom w-100 justify-content-center">Join VIP Club</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section class="section-padding bg-secondary" id="testimonials">
 <div class="container">
 <div class="text-center mb-5 animate-on-scroll">
@@ -287,7 +606,7 @@
                     "The STEM Lab is absolutely incredible! My 5-year-old came home talking about circuits and magnets. KidNest makes learning feel like the greatest adventure. We've tried many play centers, and nothing comes close to this experience."
                   </blockquote>
 <div class="home2-testimonial-author">
-<span class="testimonial-avatar-initial">SJ</span>
+<img alt="Sarah Johnson" class="testimonial-avatar-img" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
 <div>
 <h6>Sarah Johnson</h6>
 <p>Mom of 2 — STEM Enthusiast</p>
@@ -304,7 +623,7 @@
                     "We hosted my daughter's 7th birthday at the Creative Arts Studio and it was magical. The themed decorations, the art projects, the party host — everything was thoughtfully organized. The best party she's ever had!"
                   </blockquote>
 <div class="home2-testimonial-author">
-<span class="testimonial-avatar-initial">MC</span>
+<img alt="Michael Chen" class="testimonial-avatar-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
 <div>
 <h6>Michael Chen</h6>
 <p>Dad of 1 daughter — Party Host</p>
@@ -321,7 +640,7 @@
                     "The progress tracking app is a game changer! I can see exactly which skills my son is developing during each visit. The small group sessions mean he gets real attention from the educators. Worth every penny."
                   </blockquote>
 <div class="home2-testimonial-author">
-<span class="testimonial-avatar-initial">ER</span>
+<img alt="Emily Rodriguez" class="testimonial-avatar-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=120&amp;q=80"/>
 <div>
 <h6>Emily Rodriguez</h6>
 <p>Mom of 3 — VIP Member</p>

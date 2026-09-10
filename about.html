@@ -21,7 +21,7 @@
 <style>
     :root{--about-purple:#7b2ff7;--about-teal:#00c9a7;--about-yellow:#ffc857;--about-pink:#ff6b9d}
     .about-page{overflow-x:hidden;overflow-y:visible}
-    .about-hero{position:relative;padding:155px 0 95px;background:var(--bg-primary);isolation:isolate}
+    .about-hero{position:relative;padding:155px 0 95px;background:var(--bg-primary);isolation:isolate;overflow:hidden;}
     .about-hero:before{content:"";position:absolute;inset:auto -12% -45% auto;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,247,.14),transparent 68%);z-index:-1}
     .about-hero:after{content:"";position:absolute;left:-14%;top:-30%;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,167,.11),transparent 68%);z-index:-1}
     .about-hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:70px;align-items:center}
@@ -37,8 +37,9 @@
     .about-hero-visual{position:relative;min-height:560px}
     .about-main-photo{position:absolute;inset:0 45px 45px 0;border-radius:34px;overflow:hidden;box-shadow:var(--shadow-xl);border:8px solid var(--bg-card)}
     .about-main-photo img{width:100%;height:100%;object-fit:cover}
-    .about-photo-accent{position:absolute;right:0;top:55px;width:150px;height:150px;border-radius:28px;overflow:hidden;border:7px solid var(--bg-card);box-shadow:var(--shadow-lg);transform:rotate(5deg)}
+    .about-photo-accent{position:absolute;right:0;top:45px;width:160px;height:160px;border-radius:28px;overflow:hidden;border:6px solid var(--bg-card);box-shadow:var(--shadow-lg);transform:rotate(5deg)}
     .about-photo-accent img{width:100%;height:100%;object-fit:cover}
+    .about-accent-badge{position:absolute;bottom:0;left:0;right:0;background:rgba(15,17,25,0.85);backdrop-filter:blur(8px);color:#fff;font-size:.72rem;font-weight:600;padding:6px 8px;text-align:center;line-height:1.25}
     .about-float-card{position:absolute;left:-22px;bottom:0;width:240px;padding:18px;background:var(--bg-card);border:1px solid var(--border-color);border-radius:20px;box-shadow:var(--shadow-lg);display:flex;gap:13px;align-items:center}
     .about-float-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;background:var(--secondary-light);color:var(--secondary);font-size:1.15rem;flex:0 0 auto}
     .about-float-card strong{display:block;font:800 1.35rem/1 var(--font-heading);color:var(--text-primary)}
@@ -79,19 +80,19 @@
     .about-value-card p{color:var(--text-secondary);line-height:1.7;margin:0}
 
     .about-team{padding:100px 0;background:var(--bg-secondary)}
-    .about-team-card{height:100%;background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;overflow:hidden;transition:var(--transition-normal)}
+    .about-team-card{height:100%;background:var(--bg-card);border:1px solid var(--border-color);border-radius:24px;overflow:hidden;transition:var(--transition-normal);display:flex;flex-direction:column}
     .about-team-card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg)}
-    .about-team-photo{height:300px;position:relative;overflow:hidden}
+    .about-team-photo{height:280px;position:relative;overflow:hidden}
     .about-team-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
     .about-team-card:hover .about-team-photo img{transform:scale(1.05)}
-    .about-team-role{position:absolute;left:18px;bottom:18px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.92);color:#222;font-size:.74rem;font-weight:800}
-    [data-theme="dark"] .about-team-role{background:rgba(25,25,35,.92);color:#fff}
-    .about-team-body{padding:23px}
-    .about-team-body h3{font:800 1.35rem var(--font-heading);color:var(--text-primary);margin:0 0 4px}
-    .about-team-body p{font-size:.88rem;color:var(--text-secondary);line-height:1.65;margin:0 0 15px}
-    .about-socials{display:flex;gap:8px}
-    .about-socials a{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--border-color);color:var(--text-secondary);text-decoration:none;transition:.2s}
-    .about-socials a:hover{color:var(--secondary);border-color:var(--secondary)}
+    .about-team-role{position:absolute;left:18px;bottom:18px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.94);color:#222;font-size:.75rem;font-weight:700;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+    [data-theme="dark"] .about-team-role{background:rgba(25,25,35,.94);color:#fff}
+    .about-team-body{padding:24px;display:flex;flex-direction:column;flex-grow:1}
+    .about-team-body h3{font:600 1.3rem var(--font-heading);color:var(--text-primary);margin:0 0 6px}
+    .about-team-body p{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0 0 18px;flex-grow:1;min-height:4.5rem;display:flex;align-items:flex-start}
+    .about-socials{display:flex;gap:8px;margin-top:auto}
+    .about-socials a{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;border:1px solid var(--border-color);color:var(--text-secondary);text-decoration:none;transition:.2s}
+    .about-socials a:hover{color:#fff;background:var(--primary);border-color:var(--primary)}
 
     .about-history{padding:100px 0;background:var(--bg-primary)}
     .about-history-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
@@ -171,11 +172,12 @@
 <button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
 <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
 <li class="nav-item dropdown"><a aria-expanded="false" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
-<ul class="dropdown-menu"><li><a class="dropdown-item active" href="index.html"><i class="fas fa-home me-2"></i>Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html"><i class="fas fa-star me-2"></i>Home 2 - Modern/Niche</a></li></ul></li>
-<li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+<ul class="dropdown-menu"><li><a class="dropdown-item" href="index.html">Home 1 - General Play</a></li><li><a class="dropdown-item" href="home2.html">Home 2 - Modern/Niche</a></li></ul></li>
+<li class="nav-item"><a class="nav-link active" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
 <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
 <li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
 <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="parent-dashboard.html"><i class="fas fa-gauge me-1 d-lg-none"></i>Dashboard</a></li>
 <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
 </ul>
@@ -212,7 +214,7 @@
 </div>
 <div class="about-hero-visual animate-on-scroll delay-1">
 <div class="about-main-photo"><img alt="Children enjoying an indoor play area" src="images/user-supplied/about-hero.webp"/></div>
-<div class="about-photo-accent"><img alt="Child exploring a creative activity" src="https://images.unsplash.com/photo-1564429238961-5a8d0f6e4d9b?auto=format&amp;fit=crop&amp;w=400&amp;q=85"/></div>
+<div class="about-photo-accent"><img alt="Child exploring a creative activity" src="images/site/creative.jpg"/><span class="about-accent-badge">Child exploring a creative activity</span></div>
 <div class="about-float-card"><div class="about-float-icon"><i class="fas fa-shield-heart"></i></div><div><strong>Safety First</strong><span>Designed for worry-free play</span></div></div>
 <div aria-hidden="true" class="about-shape"></div>
 </div>
