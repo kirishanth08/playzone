@@ -1449,7 +1449,7 @@ a.btn-primary:hover {
   margin-bottom: 12px;
   min-height: 2.8rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
 }
@@ -1461,11 +1461,12 @@ a.btn-primary:hover {
   margin-bottom: 20px;
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
-  min-height: 4.2rem;
+  min-height: 4.8rem;
   line-height: 1.6;
+  width: 100%;
 }
 
 .service-price {
@@ -1474,6 +1475,7 @@ a.btn-primary:hover {
   font-weight: 600 !important;
   color: var(--primary);
   margin-top: auto;
+  padding-top: 6px;
 }
 
 .service-price small {
@@ -1632,6 +1634,8 @@ a.btn-primary:hover {
   transition: all var(--transition-normal);
   height: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-card:hover {
@@ -1657,12 +1661,14 @@ a.btn-primary:hover {
   margin-bottom: 24px;
   font-style: italic;
   position: relative;
+  flex-grow: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-top: auto;
 }
 
 .testimonial-avatar {
