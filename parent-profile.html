@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Profile | KidNest</title>
+<link rel="icon" href="images/logo.svg">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<style>
+body{background:var(--bg-secondary);color:var(--text-primary)}
+.dash-shell{min-height:100vh;display:flex}
+.sidebar{width:270px;background:var(--bg-card);border-right:1px solid var(--border-color);position:fixed;inset:0 auto 0 0;z-index:100;padding:22px 16px;display:flex;flex-direction:column}
+.brand{padding:4px 12px 24px}
+.brand img{height:42px}
+.side-link{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;color:var(--text-secondary);text-decoration:none;font-weight:700;margin-bottom:5px;transition:all var(--transition-fast)}
+.side-link:hover,.side-link.active{background:var(--primary-light);color:var(--primary)}
+.side-link i{width:20px;text-align:center}
+.sidebar-bottom{margin-top:auto}
+.main{margin-left:270px;width:calc(100% - 270px);padding:24px 30px}
+.topbar{background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:var(--shadow-sm);position:sticky;top:15px;z-index:50}
+.top-actions{display:flex;align-items:center;gap:10px}
+.icon-btn{width:42px;height:42px;border:1px solid var(--border-color);background:var(--bg-primary);color:var(--text-primary);border-radius:11px;cursor:pointer;display:grid;place-items:center;transition:all var(--transition-fast)}
+.icon-btn:hover{background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
+.page-hero{margin:28px 0}
+.eyebrow{color:var(--primary);font-weight:800;font-size:.85rem;text-transform:uppercase;letter-spacing:.5px}
+.page-hero h1{font-family:var(--font-heading);font-size:clamp(2rem,4vw,3rem);margin:5px 0}
+.muted{color:var(--text-secondary)}
+.panel{background:var(--bg-card);border:1px solid var(--border-color);border-radius:18px;box-shadow:var(--shadow-sm);padding:24px;margin-bottom:24px}
+.panel-title{font-family:var(--font-heading);font-size:1.2rem;font-weight:800;color:var(--text-primary)}
+.profile-hero-card{display:flex;align-items:center;gap:20px;padding:24px;background:linear-gradient(135deg,rgba(123,47,247,.08),rgba(255,107,53,.08));border:1px solid var(--border-color);border-radius:20px;margin-bottom:24px}
+.profile-avatar-large{width:80px;height:80px;border-radius:50%;background:var(--gradient-primary);color:#fff;font-size:2.2rem;font-weight:900;display:grid;place-items:center;box-shadow:0 6px 20px rgba(255,107,53,.35);flex-shrink:0}
+.badge-soft{background:var(--primary-light);color:var(--primary);padding:6px 12px;border-radius:999px;font-weight:800;font-size:.78rem;display:inline-flex;align-items:center;gap:6px}
+.badge-success-soft{background:rgba(34,197,94,.12);color:#16a34a;padding:6px 12px;border-radius:999px;font-weight:800;font-size:.78rem}
+.form-control,.form-select{background:var(--bg-primary);color:var(--text-primary);border-color:var(--border-color);border-radius:12px;padding:12px 14px}
+.form-control:focus,.form-select:focus{background:var(--bg-primary);color:var(--text-primary);border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}
+.form-label{font-weight:700;font-size:.9rem;color:var(--text-primary);margin-bottom:6px}
+.btn-primary-k{background:var(--gradient-primary);color:#fff;border:0;border-radius:12px;padding:11px 22px;font-weight:800;cursor:pointer;transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:8px}
+.btn-primary-k:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(255,107,53,.35);color:#fff}
+.alert-toast{display:none;border-radius:12px;padding:12px 16px;margin-bottom:18px;font-weight:700;font-size:.9rem}
+.alert-toast.show{display:block}
+.alert-toast.success{background:rgba(34,197,94,.12);color:#15803d;border:1px solid rgba(34,197,94,.25)}
+[data-theme="dark"] .alert-toast.success{color:#86efac}
+.stat-pill{padding:14px;border-radius:14px;background:var(--bg-primary);border:1px solid var(--border-color);text-align:center}
+.stat-pill .num{font-size:1.5rem;font-weight:900;color:var(--text-primary)}
+.stat-pill .lbl{font-size:.78rem;color:var(--text-secondary);font-weight:700}
+@media(max-width:991px){
+  .sidebar{width:78px;padding:16px 10px}
+  .brand{padding:4px 8px 24px}
+  .brand img{height:35px;width:42px;object-fit:cover;object-position:left}
+  .side-link span{display:none}
+  .side-link{justify-content:center}
+  .main{margin-left:78px;width:calc(100% - 78px);padding:18px}
+  .topbar{top:8px}
+}
+@media(max-width:575px){
+  .sidebar{width:0;padding:0;overflow:hidden;border:0}
+  .main{margin-left:0;width:100%;padding:12px}
+  .topbar{position:relative}
+  .profile-hero-card{flex-direction:column;text-align:center}
+  .hide-sm{display:none!important}
+}
+[dir=rtl] .sidebar{inset:0 0 0 auto;border-right:0;border-left:1px solid var(--border-color)}
+[dir=rtl] .main{margin-left:0;margin-right:270px}
+@media(max-width:991px){[dir=rtl] .main{margin-right:78px}}
+@media(max-width:575px){[dir=rtl] .main{margin-right:0}}
+</style>
+</head>
+<body>
+<div class="dash-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <a href="index.html">
+        <img class="brand-logo-light" src="images/logo.svg" alt="KidNest">
+        <img class="brand-logo-dark" src="images/logo-dark.svg" alt="KidNest" style="display:none">
+      </a>
+    </div>
+    <nav>
+      <a class="side-link" href="dashboard.html"><i class="fas fa-grid-2"></i><span>Overview</span></a>
+      <a class="side-link" href="parent-bookings.html"><i class="fas fa-calendar-plus"></i><span>Book a Session</span></a>
+      <a class="side-link" href="parent-children.html"><i class="fas fa-child"></i><span>My Children</span></a>
+      <a class="side-link" href="parent-membership.html"><i class="fas fa-crown"></i><span>Membership</span></a>
+      <a class="side-link" href="parent-visits.html"><i class="fas fa-clock-rotate-left"></i><span>Visit History</span></a>
+      <a class="side-link" href="parent-invoices.html"><i class="fas fa-file-invoice"></i><span>Invoices</span></a>
+      <a class="side-link" href="parent-parties.html"><i class="fas fa-cake-candles"></i><span>Birthday Parties</span></a>
+      <a class="side-link active" href="parent-profile.html"><i class="fas fa-user-circle"></i><span>My Profile</span></a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a class="side-link" href="index.html"><i class="fas fa-arrow-left"></i><span>Back to Website</span></a>
+      <a class="side-link" href="login.html" id="logout"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <strong>My Profile</strong>
+        <div class="small muted">Manage your personal details and account settings</div>
+      </div>
+      <div class="top-actions">
+        <button class="icon-btn rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+        <button class="icon-btn theme-toggle-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+        <a href="parent-profile.html" class="user-profile-badge">
+          <div class="user-avatar-sm" id="topAvatar">M</div>
+          <div class="user-profile-info d-none d-sm-block">
+            <div class="user-profile-name" id="topName">Member</div>
+            <div class="user-profile-role">Adventure+ Member</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <section class="page-hero">
+      <span class="eyebrow">ACCOUNT SETTINGS</span>
+      <h1>My Profile</h1>
+      <p class="muted mb-0">Review and update your contact information, emergency contacts and preferences.</p>
+    </section>
+
+    <div id="profileAlert" class="alert-toast success" role="status"></div>
+
+    <div class="profile-hero-card">
+      <div class="profile-avatar-large" id="heroAvatar">M</div>
+      <div class="flex-grow-1">
+        <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+          <h3 class="mb-0" id="heroName">Member</h3>
+          <span class="badge-soft"><i class="fas fa-crown"></i> Adventure+ Member</span>
+          <span class="badge-success-soft">Active</span>
+        </div>
+        <div class="muted small mb-2" id="heroEmail">member@kidnest.com</div>
+        <div class="d-flex flex-wrap gap-3 small text-secondary">
+          <span><i class="fas fa-id-card me-1 text-primary"></i> Member ID: <strong>#KN-8842</strong></span>
+          <span><i class="fas fa-calendar-check me-1 text-primary"></i> Joined: <strong>January 2026</strong></span>
+          <span><i class="fas fa-child me-1 text-primary"></i> <strong>2 Children</strong> Linked</span>
+        </div>
+      </div>
+      <div>
+        <a href="parent-bookings.html" class="btn-primary-k text-decoration-none"><i class="fas fa-plus"></i>Book Session</a>
+      </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-3">
+        <div class="stat-pill">
+          <div class="num">12</div>
+          <div class="lbl">Total Visits</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-pill">
+          <div class="num">8</div>
+          <div class="lbl">Sessions Remaining</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-pill">
+          <div class="num">₹1,250</div>
+          <div class="lbl">KidNest Wallet</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-pill">
+          <div class="num">480</div>
+          <div class="lbl">Play Club Points</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="panel">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="panel-title"><i class="fas fa-user-gear me-2 text-primary"></i>Personal Information</div>
+            <span class="small muted">Primary Account Holder</span>
+          </div>
+
+          <form id="personalForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" value="Member" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" value="" placeholder="Your last name">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" value="member@kidnest.com" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" value="+91 98765 43210" placeholder="+91 00000 00000">
+              </div>
+              <div class="col-md-8">
+                <label class="form-label" for="address">Address / Area</label>
+                <input type="text" class="form-control" id="address" value="Park Street, Bangalore" placeholder="Your residential address">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" for="city">City</label>
+                <input type="text" class="form-control" id="city" value="Bangalore">
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn-primary-k"><i class="fas fa-floppy-disk"></i>Save Changes</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="panel-title"><i class="fas fa-phone-volume me-2 text-danger"></i>Emergency Contact</div>
+            <span class="badge-soft">Mandatory for Play Sessions</span>
+          </div>
+
+          <form id="emergencyForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="emName">Contact Person Name</label>
+                <input type="text" class="form-control" id="emName" value="Sameer Kumar" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="emRelation">Relationship</label>
+                <select class="form-select" id="emRelation">
+                  <option selected>Spouse</option>
+                  <option>Grandparent</option>
+                  <option>Guardian</option>
+                  <option>Relative / Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="emPhone">Primary Emergency Phone</label>
+                <input type="tel" class="form-control" id="emPhone" value="+91 98765 01234" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="emAltPhone">Alternate Phone</label>
+                <input type="tel" class="form-control" id="emAltPhone" value="+91 98765 99887">
+              </div>
+              <div class="col-12 mt-4">
+                <button type="submit" class="btn-primary-k"><i class="fas fa-shield-halved"></i>Update Emergency Contact</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="panel">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="panel-title"><i class="fas fa-children me-2 text-primary"></i>Linked Children</div>
+            <a href="parent-children.html" class="small fw-bold text-decoration-none">Manage <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="d-grid gap-3">
+            <div class="p-3 border rounded-3 bg-body-tertiary d-flex align-items-center gap-3">
+              <div class="avatar">A</div>
+              <div class="flex-grow-1">
+                <strong>Aria</strong>
+                <div class="small muted">Age 6 · Junior Jungle & Creative Studio</div>
+              </div>
+              <span class="badge-soft">Active</span>
+            </div>
+            <div class="p-3 border rounded-3 bg-body-tertiary d-flex align-items-center gap-3">
+              <div class="avatar">R</div>
+              <div class="flex-grow-1">
+                <strong>Ryan</strong>
+                <div class="small muted">Age 9 · Adventure Arena & Trampoline</div>
+              </div>
+              <span class="badge-soft">Active</span>
+            </div>
+          </div>
+          <a href="parent-children.html" class="btn btn-outline-primary btn-sm w-100 mt-3"><i class="fas fa-plus me-1"></i>Add Another Child</a>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title mb-3"><i class="fas fa-bell me-2 text-warning"></i>Notification Preferences</div>
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <div>
+              <div class="fw-bold">Booking Confirmations</div>
+              <div class="small muted">Receive email receipt and slot barcode</div>
+            </div>
+            <input class="form-check-input" type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary)">
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
+            <div>
+              <div class="fw-bold">SMS Reminder</div>
+              <div class="small muted">Get reminder 1 hour prior to session</div>
+            </div>
+            <input class="form-check-input" type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary)">
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2">
+            <div>
+              <div class="fw-bold">Club Offers & Events</div>
+              <div class="small muted">Holiday special events and discount codes</div>
+            </div>
+            <input class="form-check-input" type="checkbox" checked style="width:20px;height:20px;accent-color:var(--primary)">
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title mb-3"><i class="fas fa-lock me-2 text-secondary"></i>Security & Login</div>
+          <p class="small muted mb-3">To update your password or authentication settings, enter your details below.</p>
+          <button class="btn btn-outline-primary btn-sm w-100 mb-2" onclick="alert('Password reset link sent to your registered email.')"><i class="fas fa-key me-1"></i>Change Password</button>
+          <button class="btn btn-outline-danger btn-sm w-100" id="logoutBtn"><i class="fas fa-right-from-bracket me-1"></i>Sign Out of Account</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const alertToast = document.getElementById('profileAlert');
+  const storedEmail = localStorage.getItem('kpz-user-email') || localStorage.getItem('kpz-parent-email') || 'member@kidnest.com';
+  const storedName = localStorage.getItem('kpz-user-name') || (storedEmail.includes('@') && !storedEmail.startsWith('member@') ? storedEmail.split('@')[0].replace(/[._-]/g, ' ') : 'Member');
+  const storedPhone = localStorage.getItem('kpz-user-phone') || '+91 98765 43210';
+  const storedAddress = localStorage.getItem('kpz-user-address') || 'Park Street, Bangalore';
+  const storedCity = localStorage.getItem('kpz-user-city') || 'Bangalore';
+  const storedEmName = localStorage.getItem('kpz-em-name') || 'Sameer Kumar';
+  const storedEmPhone = localStorage.getItem('kpz-em-phone') || '+91 98765 01234';
+
+  function updateVisuals(name, email) {
+    const formattedName = name.charAt(0).toUpperCase() + name.slice(1);
+    const initial = formattedName.charAt(0).toUpperCase() || 'M';
+    document.getElementById('topName').textContent = formattedName;
+    document.getElementById('topAvatar').textContent = initial;
+    document.getElementById('heroName').textContent = formattedName;
+    document.getElementById('heroAvatar').textContent = initial;
+    document.getElementById('heroEmail').textContent = email;
+  }
+
+  updateVisuals(storedName, storedEmail);
+
+  // Pre-fill inputs
+  const nameParts = storedName.trim().split(' ');
+  document.getElementById('firstName').value = nameParts[0] || 'Member';
+  document.getElementById('lastName').value = nameParts.slice(1).join(' ') || '';
+  document.getElementById('email').value = storedEmail;
+  document.getElementById('phone').value = storedPhone;
+  document.getElementById('address').value = storedAddress;
+  document.getElementById('city').value = storedCity;
+  document.getElementById('emName').value = storedEmName;
+  document.getElementById('emPhone').value = storedEmPhone;
+
+  // Personal form submit
+  document.getElementById('personalForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fn = document.getElementById('firstName').value.trim();
+    const ln = document.getElementById('lastName').value.trim();
+    const fullName = `${fn} ${ln}`.trim() || 'Member';
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const city = document.getElementById('city').value.trim();
+
+    localStorage.setItem('kpz-user-name', fullName);
+    localStorage.setItem('kpz-user-email', email);
+    localStorage.setItem('kpz-parent-email', email);
+    localStorage.setItem('kpz-user-phone', phone);
+    localStorage.setItem('kpz-user-address', address);
+    localStorage.setItem('kpz-user-city', city);
+
+    updateVisuals(fullName, email);
+
+    alertToast.textContent = 'Profile details updated successfully!';
+    alertToast.className = 'alert-toast success show';
+    setTimeout(() => { alertToast.className = 'alert-toast success'; }, 3000);
+  });
+
+  // Emergency form submit
+  document.getElementById('emergencyForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const emName = document.getElementById('emName').value.trim();
+    const emPhone = document.getElementById('emPhone').value.trim();
+    localStorage.setItem('kpz-em-name', emName);
+    localStorage.setItem('kpz-em-phone', emPhone);
+
+    alertToast.textContent = 'Emergency contact information updated successfully!';
+    alertToast.className = 'alert-toast success show';
+    setTimeout(() => { alertToast.className = 'alert-toast success'; }, 3000);
+  });
+
+  const doLogout = () => {
+    localStorage.removeItem('kpz-user-auth');
+    localStorage.removeItem('kpz-parent-auth');
+    localStorage.removeItem('kpz-user-email');
+    localStorage.removeItem('kpz-parent-email');
+    window.location.href = 'login.html';
+  };
+
+  document.getElementById('logout').addEventListener('click', (e) => {
+    e.preventDefault();
+    doLogout();
+  });
+  document.getElementById('logoutBtn').addEventListener('click', (e) => {
+    e.preventDefault();
+    doLogout();
+  });
+});
+</script>
+</body>
+</html>

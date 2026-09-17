@@ -658,6 +658,97 @@ a.btn-primary:hover {
   background: var(--primary-light);
 }
 
+.btn-profile {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.btn-profile:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.btn-profile:active {
+  transform: translateY(0);
+}
+
+.user-profile-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 14px 4px 5px;
+  border-radius: 50px;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.user-profile-badge:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  color: var(--primary) !important;
+  transform: translateY(-1px);
+}
+
+.user-avatar-sm {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(255, 107, 53, 0.25);
+}
+
+.user-profile-info {
+  line-height: 1.25;
+  text-align: left;
+}
+
+[dir="rtl"] .user-profile-info {
+  text-align: right;
+}
+
+.user-profile-name {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.user-profile-role {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.avatar-lg {
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 1.5rem !important;
+}
+
 .btn-login {
   padding: 10px 24px;
   border-radius: 50px;
@@ -883,6 +974,17 @@ a.btn-primary:hover {
     border-radius: var(--radius-md) !important;
     font-weight: 700 !important;
     font-size: 0.95rem !important;
+  }
+
+  .mobile-nav-actions .btn-profile {
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    height: 46px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
 
