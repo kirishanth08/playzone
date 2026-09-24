@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html data-theme="light" dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="KidNest Safety Standards - Clean, certified and secure indoor play for children of all ages." name="description" />
+  <meta content="kids play safety, clean play area, sanitized indoor playground, safety standards, KidNest safety" name="keywords" />
+  <meta content="KidNest" name="author" />
+  <title>Safety Standards | KidNest Indoor Play Area</title>
+  <link href="images/logo.svg" rel="icon" type="image/svg+xml" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome 6 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+  <style>
+    .safety-page { background: var(--bg-secondary); color: var(--text-primary); }
+    .safety-hero {
+      padding: 160px 0 80px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(123, 47, 247, 0.92), rgba(255, 107, 53, 0.88)), url('images/user-supplied/about-safety.webp') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+    }
+    .safety-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .safety-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: #fff !important;
+    }
+    .safety-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+      color: #fff !important;
+    }
+    .safety-pillar-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 32px 24px;
+      height: 100%;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .safety-pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary);
+    }
+    .safety-pillar-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .safety-rule-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .safety-rule-card i {
+      font-size: 1.4rem;
+      color: var(--accent);
+      margin-top: 3px;
+    }
+  </style>
+</head>
+<body class="safety-page">
+  <!-- ===== Preloader ===== -->
+  <div class="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-playzone fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img alt="KidNest Logo" class="brand-logo-light" height="45" src="images/logo.svg" />
+        <img alt="KidNest Logo" class="brand-logo-dark" height="45" src="images/logo-dark.svg" style="display:none;" />
+      </a>
+      <button aria-label="Open menu" class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <button aria-label="Close menu" class="mobile-close-btn"><i class="fas fa-times"></i></button>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-1">
+          <li class="nav-item dropdown">
+            <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"><i class="fas fa-home me-1 d-lg-none"></i>Home</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html">Home 1 - General Play</a></li>
+              <li><a class="dropdown-item" href="home2.html">Home 2 - Modern/Niche</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="fas fa-info-circle me-1 d-lg-none"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html"><i class="fas fa-concierge-bell me-1 d-lg-none"></i>Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="play-zones.html">Play Zones</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html"><i class="fas fa-tag me-1 d-lg-none"></i>Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html"><i class="fas fa-blog me-1 d-lg-none"></i>Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1 d-lg-none"></i>Contact</a></li>
+        </ul>
+        <div class="mobile-nav-actions d-lg-none">
+          <a class="btn-dashboard" href="dashboard.html">Dashboard</a>
+          <a class="btn-login" href="login.html">Login</a>
+          <a class="btn-signup" href="register.html">Sign Up</a>
+        </div>
+      </div>
+      <div class="navbar-actions">
+        <button class="rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
+        <button class="theme-toggle-btn" title="Toggle Dark/Light Mode"><i class="fas fa-moon"></i></button>
+        <a class="btn-dashboard" href="dashboard.html">Dashboard</a>
+        <a class="btn-login d-none d-xl-inline-flex" href="login.html">Login</a>
+        <a class="btn-signup d-none d-xl-inline-flex" href="register.html">Sign Up</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu-overlay"></div>
+
+  <!-- ===== Safety Hero ===== -->
+  <header class="safety-hero">
+    <div class="container">
+      <span class="safety-kicker"><i class="fas fa-shield-heart"></i> Our Core Commitment</span>
+      <h1>Fun Without Compromise. Safety in Every Step.</h1>
+      <p>At KidNest, every piece of play equipment, daily cleaning routine, and staff certification exists so families can focus on laughter, connection, and pure joy.</p>
+    </div>
+  </header>
+
+  <!-- ===== Safety Pillars ===== -->
+  <main class="section-padding">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-badge badge-primary"><i class="fas fa-check-double"></i> 6-Pillar Safety Framework</span>
+        <h2 class="section-title">Built Into Everything We Do</h2>
+        <p class="section-subtitle mx-auto">From medical-grade sanitation to dedicated floor supervisors, our safety protocols run 365 days a year.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-pump-soap"></i></div>
+            <h4>Hospital-Grade Sanitization</h4>
+            <p class="text-secondary">All play equipment, ball pits, and high-touch surfaces undergo systematic non-toxic disinfection between play sessions and deep steaming nightly.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-users-gear"></i></div>
+            <h4>Certified First-Aid Supervisors</h4>
+            <p class="text-secondary">Every floor team member is certified in Pediatric First Aid & CPR, actively stationed throughout play zones to guide safe exploration.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-id-badge"></i></div>
+            <h4>Secure Check-in & RFID Bands</h4>
+            <p class="text-secondary">Matching parent-child security wristbands ensure no child can leave the facility without their verified parent or guardian.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-layer-group"></i></div>
+            <h4>Age-Segregated Zones</h4>
+            <p class="text-secondary">Toddlers (1–3), Juniors (4–7), and Adventurers (8–12) have dedicated play areas so younger kids play gently without older collision hazards.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-shield"></i></div>
+            <h4>Impact-Absorbing Soft Surfaces</h4>
+            <p class="text-secondary">Engineered multi-layer high-density EVA foam flooring and padded boundary nets prevent falls, bumps, and slip injuries.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="safety-pillar-card">
+            <div class="safety-pillar-icon"><i class="fas fa-wind"></i></div>
+            <h4>HEPA Air Filtration & Climate Control</h4>
+            <p class="text-secondary">Continuous fresh air exchange with commercial HEPA H13 filters keeps indoor air clean, dust-free, and allergen-controlled all day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== House Rules ===== -->
+      <div class="mt-5 pt-4">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-5">
+            <span class="section-badge badge-secondary"><i class="fas fa-clipboard-list"></i> House Guidelines</span>
+            <h3 class="mb-3">Parent & Guest Guidelines</h3>
+            <p class="text-secondary">Working together with families is what keeps KidNest safe and enjoyable for every child. Here are a few simple rules for all visitors.</p>
+            <a class="btn-playzone btn-primary-custom mt-2" href="booking.html"><i class="fas fa-calendar-check"></i> Book a Play Session</a>
+          </div>
+          <div class="col-lg-7">
+            <div class="d-flex flex-column gap-3">
+              <div class="safety-rule-card">
+                <i class="fas fa-socks"></i>
+                <div>
+                  <h6 class="mb-1">Grip Socks Required</h6>
+                  <p class="text-secondary mb-0 small">Children must wear non-slip grip socks in all play zones. Grip socks are available at reception for ₹60.</p>
+                </div>
+              </div>
+              <div class="safety-rule-card">
+                <i class="fas fa-user-shield"></i>
+                <div>
+                  <h6 class="mb-1">Active Parent Supervision</h6>
+                  <p class="text-secondary mb-0 small">Children under 4 must be accompanied by an adult inside the Toddler Zone at all times.</p>
+                </div>
+              </div>
+              <div class="safety-rule-card">
+                <i class="fas fa-utensils"></i>
+                <div>
+                  <h6 class="mb-1">Designated Snack Areas</h6>
+                  <p class="text-secondary mb-0 small">Food and drinks are strictly limited to the KidNest Café to keep all play surfaces crumb-free and safe for allergic children.</p>
+                </div>
+              </div>
+              <div class="safety-rule-card">
+                <i class="fas fa-heart-pulse"></i>
+                <div>
+                  <h6 class="mb-1">Stay Home if Unwell</h6>
+                  <p class="text-secondary mb-0 small">To protect all visitors, any child showing symptoms of fever or cold will be offered a complimentary rebooking for another day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Footer Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a class="footer-brand" href="index.html">
+            <img alt="KidNest Logo" class="brand-logo-light" height="42" src="images/logo.svg" />
+            <img alt="KidNest Logo" class="brand-logo-dark" height="42" src="images/logo-dark.svg" style="display:none;" />
+          </a>
+          <p class="footer-description">
+            The premier indoor play destination for children ages 1-12. Creating magical memories since 2012.
+          </p>
+          <div class="footer-social">
+            <a aria-label="Facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a aria-label="Instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a aria-label="Twitter" href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a aria-label="YouTube" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a aria-label="TikTok" href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h6 class="footer-title">Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="play-zones.html">Play Zones</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <!-- Services -->
+        <div class="col-lg-2 col-md-6">
+          <h6 class="footer-title">Services</h6>
+          <ul class="footer-links">
+            <li><a href="services.html">Birthday Parties</a></li>
+            <li><a href="services.html">After-School</a></li>
+            <li><a href="services.html">Holiday Camps</a></li>
+            <li><a href="services.html">Workshops</a></li>
+            <li><a href="safety.html">Safety Standards</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h6 class="footer-title">Contact Us</h6>
+          <div class="footer-contact-item">
+            <i class="fas fa-location-dot"></i>
+            <span>123 Fun Street, Play City, PC 12345</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+1 (555) 123-4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>hello@kidsplayzone.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-clock"></i>
+            <span>Mon-Fri: 9AM-8PM | Sat-Sun: 8AM-9PM</span>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p>© 2026 KidNest. All rights reserved.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-bottom-links justify-content-md-end d-flex">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button aria-label="Back to top" class="back-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

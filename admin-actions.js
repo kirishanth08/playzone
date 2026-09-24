@@ -74,4 +74,104 @@
       modal('Message Inbox',`<div class="list-group"><button type="button" class="list-group-item list-group-item-action">Unread parent messages <span class="badge bg-danger float-end">12</span></button><button type="button" class="list-group-item list-group-item-action">Contact enquiries <span class="badge bg-warning text-dark float-end">4</span></button></div>`,'<button type="button" class="btn-primary-k" data-bs-dismiss="modal">Close</button>');return;
     }
   },true);
+
+  // Admin Mobile Sidebar Drawer Setup
+  const sidebar = document.querySelector('.sidebar');
+  if (sidebar) {
+    let backdrop = document.querySelector('.sidebar-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'sidebar-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    const topbar = document.querySelector('.topbar');
+    if (topbar && !topbar.querySelector('#sidebarToggle, .sidebar-toggle-btn')) {
+      const firstChild = topbar.firstElementChild;
+      if (firstChild && !firstChild.classList.contains('top-actions')) {
+        const wrap = document.createElement('div');
+        wrap.className = 'topbar-left d-flex align-items-center gap-2';
+
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'icon-btn sidebar-toggle-btn';
+        toggleBtn.id = 'sidebarToggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle Navigation');
+        toggleBtn.setAttribute('title', 'Open Menu');
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+
+        const backBtn = document.createElement('a');
+        backBtn.className = 'icon-btn topbar-back-btn';
+        backBtn.href = 'index.html';
+        backBtn.setAttribute('aria-label', 'Back to Website');
+        backBtn.setAttribute('title', 'Back to Website');
+        backBtn.innerHTML = '<i class="fas fa-arrow-left"></i>';
+
+        firstChild.parentNode.insertBefore(wrap, firstChild);
+        wrap.appendChild(toggleBtn);
+        wrap.appendChild(backBtn);
+        wrap.appendChild(firstChild);
+      }
+    }
+
+    const brand = sidebar.querySelector('.brand');
+    if (brand && !brand.querySelector('.sidebar-close-btn')) {
+      const closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'icon-btn sidebar-close-btn';
+      closeBtn.id = 'sidebarClose';
+      closeBtn.setAttribute('aria-label', 'Close Sidebar');
+      closeBtn.setAttribute('title', 'Close Menu');
+      closeBtn.innerHTML = '<i class="fas fa-xmark"></i>';
+      brand.appendChild(closeBtn);
+    }
+
+    function openSidebar() {
+      sidebar.classList.add('show');
+      backdrop.classList.add('show');
+      document.body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('show');
+      backdrop.classList.remove('show');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    document.addEventListener('click', function (e) {
+      const toggle = e.target.closest('#sidebarToggle, .sidebar-toggle-btn');
+      if (toggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (sidebar.classList.contains('show')) closeSidebar();
+        else openSidebar();
+        return;
+      }
+
+      const close = e.target.closest('#sidebarClose, .sidebar-close-btn');
+      if (close) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeSidebar();
+        return;
+      }
+
+      if (e.target === backdrop) {
+        closeSidebar();
+        return;
+      }
+
+      const link = e.target.closest('.sidebar .side-link');
+      if (link && window.innerWidth < 992) {
+        setTimeout(closeSidebar, 150);
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sidebar.classList.contains('show')) {
+        closeSidebar();
+      }
+    });
+  }
 })();
+

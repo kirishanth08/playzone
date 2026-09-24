@@ -486,3 +486,114 @@ document.addEventListener('DOMContentLoaded', function () {
     if (homeItem) homeItem.classList.add('active');
   }
 });
+
+// ========== Dashboard Mobile Sidebar Drawer Controller ==========
+document.addEventListener('DOMContentLoaded', function () {
+  const sidebar = document.querySelector('.sidebar');
+  if (!sidebar) return;
+
+  // Ensure backdrop exists
+  let backdrop = document.querySelector('.sidebar-backdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.className = 'sidebar-backdrop';
+    document.body.appendChild(backdrop);
+  }
+
+  // Ensure topbar has toggle button and back-to-site button if missing
+  const topbar = document.querySelector('.topbar');
+  if (topbar) {
+    const topbarLeft = topbar.querySelector('.topbar-left');
+    if (!topbarLeft && !topbar.querySelector('#sidebarToggle, .sidebar-toggle-btn')) {
+      const firstChild = topbar.firstElementChild;
+      if (firstChild && !firstChild.classList.contains('top-actions')) {
+        const wrap = document.createElement('div');
+        wrap.className = 'topbar-left d-flex align-items-center gap-2';
+
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'icon-btn sidebar-toggle-btn';
+        toggleBtn.id = 'sidebarToggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle Navigation');
+        toggleBtn.setAttribute('title', 'Open Menu');
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+
+        const backBtn = document.createElement('a');
+        backBtn.className = 'icon-btn topbar-back-btn';
+        backBtn.href = 'index.html';
+        backBtn.setAttribute('aria-label', 'Back to Website');
+        backBtn.setAttribute('title', 'Back to Website');
+        backBtn.innerHTML = '<i class="fas fa-arrow-left"></i>';
+
+        firstChild.parentNode.insertBefore(wrap, firstChild);
+        wrap.appendChild(toggleBtn);
+        wrap.appendChild(backBtn);
+        wrap.appendChild(firstChild);
+      }
+    }
+  }
+
+  // Ensure sidebar brand has close button if missing
+  const brand = sidebar.querySelector('.brand');
+  if (brand && !brand.querySelector('.sidebar-close-btn')) {
+    const closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.className = 'icon-btn sidebar-close-btn';
+    closeBtn.id = 'sidebarClose';
+    closeBtn.setAttribute('aria-label', 'Close Sidebar');
+    closeBtn.setAttribute('title', 'Close Menu');
+    closeBtn.innerHTML = '<i class="fas fa-xmark"></i>';
+    brand.appendChild(closeBtn);
+  }
+
+  function openSidebar() {
+    sidebar.classList.add('show');
+    backdrop.classList.add('show');
+    document.body.classList.add('sidebar-open');
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove('show');
+    backdrop.classList.remove('show');
+    document.body.classList.remove('sidebar-open');
+  }
+
+  document.addEventListener('click', function (e) {
+    const toggle = e.target.closest('#sidebarToggle, .sidebar-toggle-btn');
+    if (toggle) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (sidebar.classList.contains('show')) {
+        closeSidebar();
+      } else {
+        openSidebar();
+      }
+      return;
+    }
+
+    const close = e.target.closest('#sidebarClose, .sidebar-close-btn');
+    if (close) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeSidebar();
+      return;
+    }
+
+    if (e.target === backdrop) {
+      closeSidebar();
+      return;
+    }
+
+    const link = e.target.closest('.sidebar .side-link');
+    if (link && window.innerWidth < 992) {
+      setTimeout(closeSidebar, 150);
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('show')) {
+      closeSidebar();
+    }
+  });
+});
+

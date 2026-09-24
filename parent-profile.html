@@ -45,26 +45,42 @@ body{background:var(--bg-secondary);color:var(--text-primary)}
 .stat-pill{padding:14px;border-radius:14px;background:var(--bg-primary);border:1px solid var(--border-color);text-align:center}
 .stat-pill .num{font-size:1.5rem;font-weight:900;color:var(--text-primary)}
 .stat-pill .lbl{font-size:.78rem;color:var(--text-secondary);font-weight:700}
+.sidebar-backdrop{position:fixed;inset:0;background:rgba(15,17,25,.6);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:1040;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+.sidebar-backdrop.show{opacity:1;visibility:visible}
+body.sidebar-open{overflow:hidden}
+.sidebar-toggle-btn{display:none}
+.sidebar-close-btn{display:none}
+.topbar-back-btn{display:inline-grid;place-items:center;text-decoration:none;color:var(--text-primary);border:1px solid var(--border-color);background:var(--bg-primary);border-radius:11px;width:42px;height:42px;transition:.2s}
+.topbar-back-btn:hover{background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
+.sidebar-bottom .btn-back-site{background:var(--bg-primary)!important;border:1px solid var(--border-color)!important;color:var(--primary)!important;margin-bottom:8px}
+.sidebar-bottom .btn-back-site:hover{background:var(--primary)!important;color:#fff!important}
 @media(max-width:991px){
-  .sidebar{width:78px;padding:16px 10px}
-  .brand{padding:4px 8px 24px}
-  .brand img{height:35px;width:42px;object-fit:cover;object-position:left}
-  .side-link span{display:none}
-  .side-link{justify-content:center}
-  .main{margin-left:78px;width:calc(100% - 78px);padding:18px}
-  .topbar{top:8px}
+  .sidebar-toggle-btn{display:inline-grid!important;place-items:center}
+  .sidebar{position:fixed!important;top:0!important;bottom:0!important;left:0!important;width:280px!important;max-width:85vw!important;height:100vh!important;z-index:1050!important;background:var(--bg-card)!important;box-shadow:0 0 40px rgba(0,0,0,.35)!important;padding:20px 16px!important;display:flex!important;flex-direction:column!important;transform:translateX(-100%)!important;transition:transform .3s cubic-bezier(.4,0,.2,1)!important;overflow-y:auto!important;border-right:1px solid var(--border-color)!important}
+  .sidebar.show{transform:translateX(0)!important}
+  .sidebar .brand{display:flex!important;align-items:center!important;justify-content:space-between!important;padding:4px 6px 20px!important}
+  .sidebar .brand img{height:38px!important;width:auto!important}
+  .sidebar .side-link{justify-content:flex-start!important;padding:12px 14px!important}
+  .sidebar .side-link span{display:inline-block!important}
+  .sidebar-close-btn{display:inline-grid!important;place-items:center;width:38px;height:38px;border-radius:10px}
+  .dash-shell .main{margin-left:0!important;width:100%!important;padding:18px!important}
+  .topbar{position:sticky!important;top:10px!important}
+  [dir=rtl] .sidebar{transform:translateX(100%)!important}
+  [dir=rtl] .sidebar.show{transform:translateX(0)!important}
+  [dir=rtl] .dash-shell .main{margin-right:0!important;margin-left:0!important}
 }
 @media(max-width:575px){
-  .sidebar{width:0;padding:0;overflow:hidden;border:0}
-  .main{margin-left:0;width:100%;padding:12px}
-  .topbar{position:relative}
+  .dash-shell .main{padding:12px!important}
+  .topbar{position:sticky!important;top:8px!important;padding:10px 12px!important;gap:8px!important}
+  .icon-btn{width:38px!important;height:38px!important}
+  .topbar-back-btn{width:38px!important;height:38px!important}
   .profile-hero-card{flex-direction:column;text-align:center}
   .hide-sm{display:none!important}
 }
 [dir=rtl] .sidebar{inset:0 0 0 auto;border-right:0;border-left:1px solid var(--border-color)}
 [dir=rtl] .main{margin-left:0;margin-right:270px}
-@media(max-width:991px){[dir=rtl] .main{margin-right:78px}}
-@media(max-width:575px){[dir=rtl] .main{margin-right:0}}
+@media(max-width:991px){[dir=rtl] .main{margin-right:0!important;margin-left:0!important}}
+@media(max-width:575px){[dir=rtl] .main{margin-right:0!important}}
 </style>
 </head>
 <body>
@@ -75,6 +91,7 @@ body{background:var(--bg-secondary);color:var(--text-primary)}
         <img class="brand-logo-light" src="images/logo.svg" alt="KidNest">
         <img class="brand-logo-dark" src="images/logo-dark.svg" alt="KidNest" style="display:none">
       </a>
+      <button class="icon-btn sidebar-close-btn" id="sidebarClose" aria-label="Close Sidebar" title="Close Menu"><i class="fas fa-xmark"></i></button>
     </div>
     <nav>
       <a class="side-link" href="dashboard.html"><i class="fas fa-grid-2"></i><span>Overview</span></a>
@@ -87,16 +104,20 @@ body{background:var(--bg-secondary);color:var(--text-primary)}
       <a class="side-link active" href="parent-profile.html"><i class="fas fa-user-circle"></i><span>My Profile</span></a>
     </nav>
     <div class="sidebar-bottom">
-      <a class="side-link" href="index.html"><i class="fas fa-arrow-left"></i><span>Back to Website</span></a>
+      <a class="side-link btn-back-site" href="index.html"><i class="fas fa-arrow-left"></i><span>Back to Website</span></a>
       <a class="side-link" href="login.html" id="logout"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
     </div>
   </aside>
 
   <main class="main">
     <div class="topbar">
-      <div>
-        <strong>My Profile</strong>
-        <div class="small muted">Manage your personal details and account settings</div>
+      <div class="topbar-left d-flex align-items-center gap-2">
+        <button class="icon-btn sidebar-toggle-btn" id="sidebarToggle" aria-label="Toggle Navigation" title="Open Menu"><i class="fas fa-bars"></i></button>
+        <a href="index.html" class="icon-btn topbar-back-btn" title="Back to Website" aria-label="Back to Website"><i class="fas fa-arrow-left"></i></a>
+        <div>
+          <strong>My Profile</strong>
+          <div class="small muted d-none d-sm-block">Manage your personal details and account settings</div>
+        </div>
       </div>
       <div class="top-actions">
         <button class="icon-btn rtl-toggle-btn" title="Toggle RTL/LTR"><span>RTL</span></button>
